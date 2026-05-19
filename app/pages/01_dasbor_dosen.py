@@ -34,6 +34,7 @@ from peserta_loader import (                          # noqa: E402
     load_roster, list_all_peserta, list_kelompok,
 )
 from form_generator import generate_form_markdown, GENDER_LABEL  # noqa: E402
+from storage import RUBRIK_R03, hitung_nilai_akhir                # noqa: E402
 
 load_dotenv()
 
@@ -175,11 +176,12 @@ st.divider()
 # ============================================================
 # Tab utama
 # ============================================================
-tab_viz, tab_sesi, tab_belum, tab_detail, tab_export = st.tabs([
+tab_viz, tab_sesi, tab_belum, tab_detail, tab_nilai, tab_export = st.tabs([
     "📊 Statistik",
     "📋 Daftar Sesi",
     "🚫 Belum Pakai",
     "🔎 Detail Sesi",
+    "📝 Nilai",
     "💾 Ekspor",
 ])
 
@@ -385,6 +387,158 @@ with tab_detail:
                     st.markdown(m["content"])
 
 
+# ----- Nilai -----
+with tab_nilai:
+    if not roster:
+        st.warning("Roster tidak terdeteksi. Pastikan `peserta/roster.json` ada.")
+    else:
+        st.markdown(
+            "Nilai per kelompok berdasarkan **rubrik "
+            "`rubrik/R03-policy-brief-mini.md`**. Skor 1-4 per dimensi, "
+            "auto-hitung nilai akhir 0-100."
+        )
+
+        # Ambil daftar nilai existing
+        nilai_existing = {n["kelompok"]: n for n in storage.list_nilai()}
+        all_kelompok = list_kelompok(roster)
+        sudah_dinilai = sum(1 for k in all_kelompok if k in nilai_existing)
+
+        n1, n2, n3 = st.columns(3)
+        n1.metric("Total kelompok", len(all_kelompok))
+        n2.metric("Sudah dinilai", f"{sudah_dinilai}/{len(all_kelompok)}")
+        avg = (
+            sum(n["nilai_akhir"] for n in nilai_existing.values())
+            / len(nilai_existing)
+            if nilai_existing else 0
+        )
+        n3.metric("Rata-rata kelas", f"{avg:.1f}" if nilai_existing else "-")
+
+        st.divider()
+        st.markdown("### Input / Edit Nilai per Kelompok")
+
+        c1, c2 = st.columns([1, 3])
+        with c1:
+            kel_pilih = st.selectbox(
+                "Pilih kelompok",
+                all_kelompok,
+                format_func=lambda k: (
+                    f"{k} {'✅' if k in nilai_existing else '⏳'}"
+                ),
+            )
+        with c2:
+            anggota = [
+                p for p in list_all_peserta(roster)
+                if p["kelompok"] == kel_pilih
+            ]
+            topik = anggota[0]["topik_uas"] if anggota else "-"
+            st.markdown(f"**Topik:** {topik}")
+            st.markdown(
+                "**Anggota:** "
+                + ", ".join(f"{a['nim']} ({a['nama'].split()[0]})" for a in anggota)
+            )
+
+        existing = nilai_existing.get(kel_pilih, {})
+
+        with st.form(f"nilai_form_{kel_pilih}"):
+            st.markdown("#### Skor per dimensi (1=Kurang, 2=Cukup, 3=Baik, 4=Sangat Baik)")
+            skor: dict[str, int] = {}
+            for kode, label, bobot in RUBRIK_R03:
+                default = existing.get(f"skor_{kode}", 0) or 0
+                skor[kode] = st.slider(
+                    f"**{label}** (bobot {int(bobot*100)}%)",
+                    min_value=0,
+                    max_value=4,
+                    value=int(default),
+                    key=f"skor_{kel_pilih}_{kode}",
+                    help="0 = belum dinilai, 1-4 sesuai rubrik",
+                )
+
+            st.markdown("---")
+
+            colp1, colp2 = st.columns(2)
+            with colp1:
+                pengurangan = st.number_input(
+                    "Pengurangan etis (poin)",
+                    min_value=0,
+                    max_value=100,
+                    value=int(existing.get("pengurangan_etis", 0) or 0),
+                    help=(
+                        "Sesuai R03: cherry-picking visual (-15), "
+                        "tidak isi form AI (-20), plagiarisme parsial "
+                        "(-30 atau lebih). 0 jika tidak ada pelanggaran."
+                    ),
+                )
+            with colp2:
+                # Preview live
+                preview = hitung_nilai_akhir(skor, pengurangan)
+                st.metric("Preview nilai akhir", f"{preview}/100")
+
+            catatan = st.text_area(
+                "Catatan untuk kelompok (opsional)",
+                value=existing.get("catatan", "") or "",
+                placeholder="Umpan balik konkret yang akan disampaikan ke kelompok...",
+                height=100,
+            )
+            dinilai_oleh = st.text_input(
+                "Dinilai oleh",
+                value=existing.get("dinilai_oleh", "") or "",
+                placeholder="Nama dosen pengampu",
+            )
+
+            cs1, cs2 = st.columns(2)
+            with cs1:
+                if st.form_submit_button("💾 Simpan Nilai", type="primary",
+                                          use_container_width=True):
+                    final = storage.save_nilai(
+                        kelompok=kel_pilih,
+                        skor=skor,
+                        pengurangan=pengurangan,
+                        catatan=catatan,
+                        dinilai_oleh=dinilai_oleh,
+                    )
+                    st.success(f"✅ Nilai {kel_pilih} disimpan: **{final}/100**")
+                    st.rerun()
+            with cs2:
+                if existing and st.form_submit_button(
+                    "🗑️ Hapus Nilai", use_container_width=True
+                ):
+                    storage.delete_nilai(kel_pilih)
+                    st.warning(f"Nilai {kel_pilih} dihapus.")
+                    st.rerun()
+
+        st.divider()
+
+        # Tabel rekap nilai
+        st.markdown("### Rekap Nilai Semua Kelompok")
+        rekap_rows = []
+        for k in all_kelompok:
+            n = nilai_existing.get(k)
+            anggota_kel = [
+                p for p in list_all_peserta(roster) if p["kelompok"] == k
+            ]
+            topik_singkat = (
+                anggota_kel[0]["topik_uas"].split(".")[0]
+                if anggota_kel else "-"
+            )
+            row_data = {
+                "Kelompok": k,
+                "Topik": topik_singkat,
+                "Anggota": ", ".join(
+                    a["nama"].split()[0] for a in anggota_kel
+                ),
+                "Status": "✅" if n else "⏳",
+                "Nilai": (
+                    f"{n['nilai_akhir']:.1f}" if n else "-"
+                ),
+            }
+            for kode, label, _ in RUBRIK_R03:
+                row_data[label.split(" ")[0]] = (
+                    n.get(f"skor_{kode}") if n else "-"
+                )
+            rekap_rows.append(row_data)
+        st.dataframe(rekap_rows, use_container_width=True, hide_index=True)
+
+
 # ----- Ekspor -----
 with tab_export:
     st.markdown("### Ekspor data UAS")
@@ -405,6 +559,47 @@ with tab_export:
             data=buf.getvalue(),
             file_name=f"sesi-uas-{datetime.now().strftime('%Y%m%d')}.csv",
             mime="text/csv",
+        )
+
+    # Ekspor CSV nilai
+    nilai_list = storage.list_nilai()
+    if nilai_list and roster:
+        import csv as csvmod
+        nilai_buf = io.StringIO()
+        anggota_per_kelompok = {}
+        for p in list_all_peserta(roster):
+            anggota_per_kelompok.setdefault(p["kelompok"], []).append(p)
+
+        nilai_fields = ["kelompok", "topik", "anggota_nim", "anggota_nama"]
+        skor_fields = [f"skor_{k}" for k, _, _ in RUBRIK_R03]
+        nilai_fields += skor_fields + [
+            "pengurangan_etis", "nilai_akhir", "catatan",
+            "dinilai_oleh", "updated_at",
+        ]
+        nilai_writer = csvmod.DictWriter(nilai_buf, fieldnames=nilai_fields)
+        nilai_writer.writeheader()
+        for n in nilai_list:
+            kel = n["kelompok"]
+            ang_list = anggota_per_kelompok.get(kel, [])
+            row_out = {
+                "kelompok": kel,
+                "topik": ang_list[0]["topik_uas"] if ang_list else "",
+                "anggota_nim": "; ".join(a["nim"] for a in ang_list),
+                "anggota_nama": "; ".join(a["nama"] for a in ang_list),
+                **{f: n.get(f, "") for f in skor_fields},
+                "pengurangan_etis": n["pengurangan_etis"],
+                "nilai_akhir": n["nilai_akhir"],
+                "catatan": n["catatan"],
+                "dinilai_oleh": n["dinilai_oleh"],
+                "updated_at": n["updated_at"],
+            }
+            nilai_writer.writerow(row_out)
+        st.download_button(
+            "📝 Ekspor CSV nilai UAS",
+            data=nilai_buf.getvalue(),
+            file_name=f"nilai-uas-{datetime.now().strftime('%Y%m%d')}.csv",
+            mime="text/csv",
+            help="Format CSV siap import ke SIA / Excel",
         )
 
         zip_buf = io.BytesIO()
