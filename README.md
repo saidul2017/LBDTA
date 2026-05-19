@@ -41,9 +41,23 @@ LBDTA/
 |---|---|---|---|---|
 | 1 | Pondasi (konsep, lanskap, pengantar etika) | M01 | T01 — Pemetaan Sumber Data (20%) | R01 |
 | 2 | Praktik (cleaning, deskriptif, visualisasi) | M02 | T02 — Analisis Data Sintetis (30%) | R02 |
-| 3 | Sintesis (korelasi/kausalitas, etika, *policy brief*) | M03 | T03 — *Policy Brief* Mini (40%) | R03 |
+| 3 | Sintesis (korelasi/kausalitas, etika, *policy brief*) | M03 | T03 — *Policy Brief* Mini (40%, **UAS**) | R03 |
 
 Partisipasi & refleksi: 10%.
+
+## Paket UAS — *Policy Brief* Mini
+
+Tugas T03 dirancang sebagai **UAS terintegratif**. Berkas yang relevan:
+
+| Berkas | Untuk siapa |
+|---|---|
+| `tugas/PETUNJUK-TEKNIS-UAS.md` | Mahasiswa & dosen — dokumen mengikat |
+| `tugas/template-policy-brief.md` | Mahasiswa — struktur yang disalin & diisi |
+| `tugas/bank-pertanyaan-pemandu.md` | Mahasiswa & dosen — Socratic prompts |
+| `tugas/T03-policy-brief-mini.md` | Mahasiswa — instruksi tugas |
+| `rubrik/R03-policy-brief-mini.md` | Dosen — rubrik + kalibrator + lembar penilaian |
+| `notebook/01-praktikum-analisis-madrasah.py` | Mahasiswa — notebook referensi yang sudah diuji |
+| `dataset/emis-sintetis/` | Mahasiswa — dataset latihan + kamus data |
 
 ## Cara menggunakan repo ini
 
