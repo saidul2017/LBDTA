@@ -1,0 +1,212 @@
+{
+  "seed": 1446,
+  "tanggal_generate": "2026-05-19",
+  "total_mahasiswa": 40,
+  "topik_uas": [
+    "1. Pemerataan kualitas pembelajaran PAI",
+    "2. Sertifikasi guru PAI",
+    "3. Investasi infrastruktur digital madrasah"
+  ],
+  "peserta": {
+    "23104010120": {
+      "nama": "RIDWAN HIMAWAN",
+      "kelompok": "K01",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010073": {
+      "nama": "ANANTHA DHARIL ALIFI",
+      "kelompok": "K01",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010109": {
+      "nama": "NURUL IZZAHTUL FAUZIAH KADIR",
+      "kelompok": "K01",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010078": {
+      "nama": "DELLA SYAHTIKA",
+      "kelompok": "K02",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010011": {
+      "nama": "MUHAMMAD IQBAL MA'RUF",
+      "kelompok": "K02",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010115": {
+      "nama": "ARDIYA FAHREZA WIRAATMAJA",
+      "kelompok": "K02",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010095": {
+      "nama": "MUHAMMAD ULIL ALBAAB",
+      "kelompok": "K03",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010010": {
+      "nama": "AZKIYAH ZAHRA SALEHA",
+      "kelompok": "K03",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010008": {
+      "nama": "NAILA FAUZIYAH",
+      "kelompok": "K03",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010108": {
+      "nama": "BAGUS ZAINUR ROHMAN",
+      "kelompok": "K04",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010113": {
+      "nama": "MUCHLISATUN NISA",
+      "kelompok": "K04",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010002": {
+      "nama": "RIDWAN NI'AM AL HAKIM",
+      "kelompok": "K04",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010082": {
+      "nama": "RIZKY ZUARDI",
+      "kelompok": "K05",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010083": {
+      "nama": "RAFA GHANI ZAKIN VAUGHAN",
+      "kelompok": "K05",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010048": {
+      "nama": "INDRIANI PUTRI NUR SOLIKHAH",
+      "kelompok": "K05",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010080": {
+      "nama": "UMAILAH HASANAH",
+      "kelompok": "K06",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010067": {
+      "nama": "NASYWAA AULIA GUSTIVIANI",
+      "kelompok": "K06",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010103": {
+      "nama": "IYAS ZAKI MUSTOFA",
+      "kelompok": "K06",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010116": {
+      "nama": "HABIBAH KHANSA FATIMAH",
+      "kelompok": "K07",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010099": {
+      "nama": "TAKHSYA BILLAHI ZALFA",
+      "kelompok": "K07",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010061": {
+      "nama": "AFIFAH NUR CAHYANI",
+      "kelompok": "K07",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010035": {
+      "nama": "FAIZAL DWI DARMAWAN",
+      "kelompok": "K08",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010052": {
+      "nama": "MALFA LIYA REVA LABIBAH",
+      "kelompok": "K08",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010118": {
+      "nama": "ANITA RIZKY MAYASARI",
+      "kelompok": "K08",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010098": {
+      "nama": "ASYA AISYAL MARDLIYAH",
+      "kelompok": "K09",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010046": {
+      "nama": "SATRIA AHSANUL HIKAM",
+      "kelompok": "K09",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010027": {
+      "nama": "MOH. ALI MUSA",
+      "kelompok": "K09",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010069": {
+      "nama": "RATNA INDAH SARI",
+      "kelompok": "K10",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010038": {
+      "nama": "AULIA AHMAD FURQON",
+      "kelompok": "K10",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010003": {
+      "nama": "MUHAMMAD ATANA HAQY",
+      "kelompok": "K10",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010033": {
+      "nama": "AUFANIDA RAHMA FINANDA",
+      "kelompok": "K11",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010016": {
+      "nama": "MUZAKKIR RIVAI DAULAY",
+      "kelompok": "K11",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010086": {
+      "nama": "DEVI ISTIYATI",
+      "kelompok": "K11",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010051": {
+      "nama": "IBTIDA LAILATUL HIKMAH",
+      "kelompok": "K12",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010081": {
+      "nama": "MUHAMAD ROZIQ ILHAMI",
+      "kelompok": "K12",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010019": {
+      "nama": "AGUN MUFTAHA NAJID",
+      "kelompok": "K12",
+      "topik_uas": "3. Investasi infrastruktur digital madrasah"
+    },
+    "23104010036": {
+      "nama": "ANIS AZZAH NUR FADHILAH",
+      "kelompok": "K13",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010111": {
+      "nama": "MAULIA RACHMA KHASANAH",
+      "kelompok": "K13",
+      "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
+    },
+    "23104010021": {
+      "nama": "MAYA ARVINA FARADHISA",
+      "kelompok": "K14",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    },
+    "23104010074": {
+      "nama": "M. MUHTAROMI",
+      "kelompok": "K14",
+      "topik_uas": "2. Sertifikasi guru PAI"
+    }
+  }
+}

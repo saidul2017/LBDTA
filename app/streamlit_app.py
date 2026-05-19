@@ -23,6 +23,9 @@ from persona import build_system_prompt, list_loaded_files  # noqa: E402
 from llm import chat_stream, get_provider, get_model        # noqa: E402
 from storage import Storage                                  # noqa: E402
 from form_generator import generate_form_markdown            # noqa: E402
+from peserta_loader import (                                 # noqa: E402
+    load_roster, list_nim, get_peserta, get_kelompok_anggota,
+)
 
 load_dotenv()
 
@@ -56,59 +59,118 @@ def get_loaded_files() -> list[str]:
     return list_loaded_files(REPO_ROOT)
 
 
+@st.cache_resource
+def get_roster() -> dict | None:
+    return load_roster(REPO_ROOT)
+
+
 # ============================================================
-# Sidebar
+# Sidebar — login / identitas kelompok
 # ============================================================
 with st.sidebar:
     st.title("📚 Asisten UAS LBDTA")
     st.caption("Literasi Big Data — Pendidikan Agama Islam")
     st.divider()
 
-    st.markdown("### Identitas Kelompok")
-    kelompok = st.text_input(
-        "Nomor kelompok",
-        key="kelompok_input",
-        placeholder="contoh: 03",
-    )
-    anggota = st.text_area(
-        "Anggota (1 nama per baris)",
-        key="anggota_input",
-        height=90,
-        placeholder="Ahmad Fulan\nFatimah binti X\n...",
-    )
-    topik = st.selectbox(
-        "Topik UAS",
-        [
-            "",
-            "1. Pemerataan kualitas pembelajaran PAI",
-            "2. Sertifikasi guru PAI",
-            "3. Investasi infrastruktur digital madrasah",
-        ],
-        key="topik_input",
-    )
+    roster = get_roster()
+    use_roster = roster is not None
 
-    if st.button("🆕 Mulai sesi baru", type="primary", use_container_width=True):
-        if not kelompok and not anggota:
-            st.warning("Mohon isi minimal nomor kelompok atau anggota.")
-        else:
-            st.session_state.session_id = storage.create_session(
-                kelompok=kelompok,
-                anggota=anggota,
-                topik=topik,
-                provider=get_provider(),
-                model=get_model(),
+    st.markdown("### Identitas Mahasiswa")
+
+    if use_roster:
+        # Mode terkunci: pilih NIM dari roster resmi
+        nim_list = list_nim(roster)
+        st.caption(
+            f"📋 Roster aktif: **{roster['total_mahasiswa']} mahasiswa** "
+            f"(seed `{roster['seed']}`)"
+        )
+        nim_pilih = st.selectbox(
+            "NIM Anda",
+            options=[""] + nim_list,
+            format_func=lambda x: x if x else "— pilih NIM —",
+            key="nim_select",
+        )
+        peserta = get_peserta(roster, nim_pilih) if nim_pilih else None
+
+        if peserta:
+            st.success(f"**{peserta['nama']}**")
+            kelompok = peserta["kelompok"]
+            topik = peserta["topik_uas"]
+            st.info(
+                f"Kelompok: **{kelompok}**\n\nTopik UAS: **{topik}**"
             )
-            st.session_state.messages = []
-            st.rerun()
+
+            # Tampilkan anggota satu kelompok
+            anggota_list = get_kelompok_anggota(roster, kelompok)
+            with st.expander(f"👥 Anggota Kelompok {kelompok}"):
+                for a in anggota_list:
+                    st.write(f"- `{a['nim']}` — {a['nama']}")
+
+            # Variabel untuk dipakai create_session
+            kelompok_val = kelompok
+            anggota_val = "\n".join(
+                f"{a['nim']} - {a['nama']}" for a in anggota_list
+            )
+            topik_val = topik
+        else:
+            st.info("Pilih NIM Anda untuk memulai.")
+            kelompok_val = anggota_val = topik_val = ""
+    else:
+        # Mode bebas: input manual (jika roster.json tidak ada)
+        st.caption("ℹ️ Mode bebas — roster tidak terdeteksi.")
+        nim_pilih = st.text_input("NIM Anda", key="nim_input_free")
+        kelompok_val = st.text_input(
+            "Nomor kelompok",
+            placeholder="contoh: K03",
+            key="kelompok_input",
+        )
+        anggota_val = st.text_area(
+            "Anggota (1 nama per baris)",
+            height=90,
+            key="anggota_input",
+        )
+        topik_val = st.selectbox(
+            "Topik UAS",
+            [
+                "",
+                "1. Pemerataan kualitas pembelajaran PAI",
+                "2. Sertifikasi guru PAI",
+                "3. Investasi infrastruktur digital madrasah",
+            ],
+            key="topik_input",
+        )
+
+    st.divider()
+
+    # Tombol mulai sesi
+    siap_mulai = bool(
+        (use_roster and peserta) or
+        (not use_roster and (kelompok_val or anggota_val))
+    )
+    if st.button(
+        "🆕 Mulai sesi baru",
+        type="primary",
+        use_container_width=True,
+        disabled=not siap_mulai,
+    ):
+        st.session_state.session_id = storage.create_session(
+            kelompok=kelompok_val,
+            anggota=anggota_val,
+            topik=topik_val,
+            provider=get_provider(),
+            model=get_model(),
+        )
+        # Simpan NIM pemicu sesi (audit)
+        if nim_pilih:
+            storage.add_message(
+                st.session_state.session_id,
+                "system",
+                f"[SESSION_OPENED_BY_NIM={nim_pilih}]",
+            )
+        st.session_state.messages = []
+        st.rerun()
 
     if st.session_state.session_id:
-        # auto-update identitas jika diubah
-        storage.update_session(
-            st.session_state.session_id,
-            kelompok=kelompok,
-            anggota=anggota,
-            topik=topik,
-        )
         sid = st.session_state.session_id
         st.success(f"Sesi aktif: `{sid[:8]}…`")
         if st.button("🗑️ Akhiri sesi"):
@@ -143,12 +205,13 @@ with st.sidebar:
 st.title("Asisten UAS — Literasi Big Data PAI")
 
 if not st.session_state.session_id:
-    st.info("👈 **Mulai sesi baru** dari sidebar setelah mengisi identitas kelompok.")
+    st.info("👈 **Pilih NIM Anda** dan klik **Mulai sesi baru** dari sidebar.")
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("### Cara pakai")
         st.markdown("""
-1. Isi **nomor kelompok**, **anggota**, dan **topik UAS** di sidebar.
+1. **Pilih NIM Anda** di sidebar — nama, kelompok, dan topik UAS
+   akan terisi otomatis.
 2. Klik **🆕 Mulai sesi baru**.
 3. Mulai bertanya. Asisten akan **mengajak Anda berpikir**, bukan
    memberi jawaban final.
@@ -176,19 +239,16 @@ tab_chat, tab_history, tab_form = st.tabs([
 
 # ---------- Tab Chat ----------
 with tab_chat:
-    # Tampilkan riwayat sesi aktif
     for m in st.session_state.messages:
         with st.chat_message(m["role"]):
             st.markdown(m["content"])
 
     if prompt := st.chat_input("Tanyakan sesuatu (mis. 'apa itu confounder?')"):
-        # 1. Catat & tampilkan pesan user
         st.session_state.messages.append({"role": "user", "content": prompt})
         storage.add_message(st.session_state.session_id, "user", prompt)
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # 2. Stream balasan asisten
         with st.chat_message("assistant"):
             placeholder = st.empty()
             full = ""
@@ -227,6 +287,8 @@ with tab_history:
             "Pengungkapan AI sebagai lampiran resmi UAS."
         )
         for m in msgs:
+            if m["role"] == "system":
+                continue  # sembunyikan pesan internal
             with st.chat_message(m["role"]):
                 st.caption(m.get("created_at", ""))
                 st.markdown(m["content"])
@@ -235,7 +297,10 @@ with tab_history:
 # ---------- Tab Form ----------
 with tab_form:
     session = storage.get_session(st.session_state.session_id)
-    msgs = storage.get_messages(st.session_state.session_id)
+    msgs = [
+        m for m in storage.get_messages(st.session_state.session_id)
+        if m["role"] != "system"
+    ]
 
     if not session:
         st.error("Sesi tidak ditemukan.")
