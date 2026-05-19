@@ -34,36 +34,59 @@ sudah dirancang dosen pengampu (lihat `.kiro/steering/asisten-pai.md`).
 cd app
 pip install -r requirements.txt
 cp .env.example .env
-# Edit .env — minimal isi GROQ_API_KEY (gratis, lihat di bawah)
+# Edit .env — minimal isi GEMINI_API_KEY (lihat di bawah)
 
 streamlit run streamlit_app.py
 ```
 
 Buka http://localhost:8501. Selesai.
 
+## Password default (sudah disiapkan)
+
+Untuk memudahkan dosen, password default sudah disetel di `.env.example`:
+
+| Akses | Password default |
+|---|---|
+| **Dasbor Dosen** | `dosen-lbdta-2026` |
+| **Mahasiswa (kelas)** | `lbdta-kelas-2026` |
+
+> ⚠️ Bapak/Ibu **bisa ganti** ke password lain di `.env` jika dirasa
+> perlu lebih kuat. Tapi `.env` tidak ter-commit ke Git, jadi cukup
+> aman untuk pemakaian normal kelas.
+
 ## Mendapatkan API key gratis
 
-### 🥇 Groq (rekomendasi default)
+### 🥇 Google Gemini (default & rekomendasi)
+
+Gemini 2.5 Flash punya **1M context window**, **1M TPM**, **250 RPD**
+free tier — cukup untuk kelas 40 mahasiswa tanpa upgrade.
+
+1. Buka https://aistudio.google.com/apikey
+2. Login dengan akun Google.
+3. Klik **Create API Key** → pilih project (atau bikin baru).
+4. Salin key → tempel ke `.env` sebagai `GEMINI_API_KEY=...`.
+5. **Tidak perlu kartu kredit.** ✓
+
+> **Catatan tentang "Gemini Pro" / "Gemini Advanced":**
+> Subscription Google One AI Premium (web Gemini) **BUKAN** akses API.
+> API key tetap diambil dari AI Studio dan free tier-nya sudah memadai.
+> Jika Bapak/Ibu sudah upgrade Vertex AI / Tier 1 paid, bisa pakai
+> `gemini-2.5-pro` dengan limit jauh lebih besar.
+
+### 🥈 Groq (alternatif gratis, tapi rate limit ketat)
 
 1. Buka https://console.groq.com → login dengan Google.
-2. Menu **API Keys** → **Create API Key**.
-3. Tempel ke `.env` sebagai `GROQ_API_KEY=...`.
-4. Limit gratis: ~30 request/menit. Cukup untuk ~30 mahasiswa
-   sekaligus.
-
-### 🥈 Google Gemini
-
-1. https://aistudio.google.com/apikey → buat API key.
-2. Di `.env`, ubah `LLM_PROVIDER=gemini` + isi `GEMINI_API_KEY=...`.
+2. **API Keys → Create API Key**.
+3. Tempel ke `.env` sebagai `GROQ_API_KEY=...` + ubah
+   `LLM_PROVIDER=groq` + `LLM_PROMPT_MODE=compact`.
+4. ⚠️ Free tier hanya 12K TPM — wajib pakai mode compact.
 
 ### 🥉 OpenAI / Anthropic
 
 Berbayar; gunakan jika sudah ada budget atau akun. Ubah
 `LLM_PROVIDER` dan isi key yang sesuai di `.env`.
 
-### 🏠 Ollama (offline)
-
-Jika ingin tanpa internet (mis. lab kampus tanpa akses luar):
+### 🏠 Ollama (offline, mis. lab kampus tanpa internet)
 
 ```bash
 # Install Ollama dari https://ollama.com
@@ -80,9 +103,12 @@ ollama pull llama3.2
 3. Pilih repo, branch `chatbot-uas`, main file: `app/streamlit_app.py`.
 4. **Advanced settings → Secrets** — isi:
    ```toml
-   LLM_PROVIDER = "groq"
-   GROQ_API_KEY = "gsk_..."
-   LLM_MODEL = "llama-3.3-70b-versatile"
+   LLM_PROVIDER = "gemini"
+   GEMINI_API_KEY = "AIza..."
+   LLM_MODEL = "gemini-2.5-flash"
+   LLM_PROMPT_MODE = "full"
+   DOSEN_PASSWORD = "dosen-lbdta-2026"
+   KELAS_PASSWORD = "lbdta-kelas-2026"
    ```
 5. Klik **Deploy**. Aplikasi akan tersedia di
    `https://<nama-acak>.streamlit.app` — bagikan URL ini ke mahasiswa.

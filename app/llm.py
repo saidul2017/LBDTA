@@ -17,7 +17,7 @@ from typing import Iterator, List, Dict
 
 DEFAULT_MODELS = {
     "groq": "llama-3.3-70b-versatile",
-    "gemini": "gemini-2.0-flash",
+    "gemini": "gemini-2.5-flash",
     "openai": "gpt-4o-mini",
     "anthropic": "claude-3-5-haiku-latest",
     "ollama": "llama3.2",
