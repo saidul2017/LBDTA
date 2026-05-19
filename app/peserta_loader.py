@@ -52,3 +52,20 @@ def get_kelompok_anggota(
         if data.get("kelompok") == kelompok:
             out.append({"nim": nim, **data})
     return sorted(out, key=lambda x: x["nim"])
+
+
+def list_all_peserta(roster: Optional[Dict]) -> List[Dict]:
+    """Flatten roster menjadi list of dict (untuk dasbor dosen)."""
+    if not roster:
+        return []
+    out = []
+    for nim, data in roster.get("peserta", {}).items():
+        out.append({"nim": nim, **data})
+    return sorted(out, key=lambda x: (x["kelompok"], x["nim"]))
+
+
+def list_kelompok(roster: Optional[Dict]) -> List[str]:
+    """Daftar kode kelompok unik."""
+    if not roster:
+        return []
+    return sorted({d["kelompok"] for d in roster.get("peserta", {}).values()})

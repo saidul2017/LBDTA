@@ -10,9 +10,13 @@ sudah dirancang dosen pengampu (lihat `.kiro/steering/asisten-pai.md`).
 
 ## Fitur
 
-- 💬 Chat dengan persona asisten PAI (7 aturan, pendekatan Socratic)
+- 💬 **Mahasiswa** — chat dengan persona asisten PAI (7 aturan, Socratic)
+- 🎓 **Dosen** — dasbor terpisah dengan password: statistik, transkrip,
+  daftar mahasiswa belum pakai, ekspor CSV/ZIP
 - 📚 Akses langsung ke **seluruh dokumen kurikulum** (RPS, modul,
   tugas, rubrik, dataset README, notebook referensi) sebagai konteks
+- 👤 **Login NIM** — mahasiswa pilih dari roster 40 nama; nama,
+  kelompok, topik UAS auto-terisi (anti-impersonasi)
 - 📜 Riwayat per sesi tersimpan di SQLite (audit trail)
 - 📋 **Auto-generate Form Pengungkapan AI** dari riwayat — siap
   dilampirkan ke UAS sesuai `tugas/PETUNJUK-TEKNIS-UAS.md` §7
@@ -104,7 +108,22 @@ ollama pull llama3.2
 ## Audit untuk dosen
 
 Database SQLite di `app/data/sessions.db` menyimpan **semua sesi
-& pesan**. Bisa diaudit dengan SQL standar:
+& pesan**. Dua cara akses:
+
+### Cara 1 — Dasbor Dosen (web)
+
+Setelah Bapak/Ibu set `DOSEN_PASSWORD` di `.env`, buka aplikasi
+lalu klik halaman **🎓 Dasbor Dosen** di sidebar Streamlit.
+
+Fitur dasbor:
+- Statistik agregat (sesi, pesan, mahasiswa aktif, kelompok aktif)
+- Tabel sesi dengan filter (kelompok, topik, min. pesan)
+- Detail per sesi (transkrip + Form Pengungkapan AI)
+- Daftar mahasiswa **belum pakai** chatbot (untuk follow-up)
+- Ekspor CSV semua sesi
+- Ekspor ZIP semua Form Pengungkapan AI sekaligus
+
+### Cara 2 — SQL langsung
 
 ```sql
 -- Daftar semua sesi
@@ -132,8 +151,10 @@ Atau gunakan GUI seperti [DB Browser for SQLite](https://sqlitebrowser.org/).
 
 | Berkas | Fungsi |
 |---|---|
-| `streamlit_app.py` | UI Streamlit (3 tab: Chat, Riwayat, Form AI) |
+| `streamlit_app.py` | UI mahasiswa (3 tab: Chat, Riwayat, Form AI) |
+| `pages/01_dasbor_dosen.py` | Dasbor dosen (auth + statistik + ekspor) |
 | `persona.py` | System prompt: 7 aturan + pemuat dokumen kurikulum |
+| `peserta_loader.py` | Pemuat `peserta/roster.json` untuk login NIM |
 | `llm.py` | Wrapper LLM provider-agnostic |
 | `storage.py` | Logging sesi & pesan ke SQLite |
 | `form_generator.py` | Auto-generate Form Pengungkapan AI |

@@ -1,41 +1,41 @@
-no,nim,nama,kelompok,topik_uas
-40,23104010120,RIDWAN HIMAWAN,K01,1. Pemerataan kualitas pembelajaran PAI
-21,23104010073,ANANTHA DHARIL ALIFI,K01,1. Pemerataan kualitas pembelajaran PAI
-34,23104010109,NURUL IZZAHTUL FAUZIAH KADIR,K01,1. Pemerataan kualitas pembelajaran PAI
-23,23104010078,DELLA SYAHTIKA,K02,2. Sertifikasi guru PAI
-5,23104010011,MUHAMMAD IQBAL MA'RUF,K02,2. Sertifikasi guru PAI
-37,23104010115,ARDIYA FAHREZA WIRAATMAJA,K02,2. Sertifikasi guru PAI
-29,23104010095,MUHAMMAD ULIL ALBAAB,K03,3. Investasi infrastruktur digital madrasah
-4,23104010010,AZKIYAH ZAHRA SALEHA,K03,3. Investasi infrastruktur digital madrasah
-3,23104010008,NAILA FAUZIYAH,K03,3. Investasi infrastruktur digital madrasah
-33,23104010108,BAGUS ZAINUR ROHMAN,K04,1. Pemerataan kualitas pembelajaran PAI
-36,23104010113,MUCHLISATUN NISA,K04,1. Pemerataan kualitas pembelajaran PAI
-1,23104010002,RIDWAN NI'AM AL HAKIM,K04,1. Pemerataan kualitas pembelajaran PAI
-26,23104010082,RIZKY ZUARDI,K05,2. Sertifikasi guru PAI
-27,23104010083,RAFA GHANI ZAKIN VAUGHAN,K05,2. Sertifikasi guru PAI
-15,23104010048,INDRIANI PUTRI NUR SOLIKHAH,K05,2. Sertifikasi guru PAI
-24,23104010080,UMAILAH HASANAH,K06,3. Investasi infrastruktur digital madrasah
-19,23104010067,NASYWAA AULIA GUSTIVIANI,K06,3. Investasi infrastruktur digital madrasah
-32,23104010103,IYAS ZAKI MUSTOFA,K06,3. Investasi infrastruktur digital madrasah
-38,23104010116,HABIBAH KHANSA FATIMAH,K07,1. Pemerataan kualitas pembelajaran PAI
-31,23104010099,TAKHSYA BILLAHI ZALFA,K07,1. Pemerataan kualitas pembelajaran PAI
-18,23104010061,AFIFAH NUR CAHYANI,K07,1. Pemerataan kualitas pembelajaran PAI
-11,23104010035,FAIZAL DWI DARMAWAN,K08,2. Sertifikasi guru PAI
-17,23104010052,MALFA LIYA REVA LABIBAH,K08,2. Sertifikasi guru PAI
-39,23104010118,ANITA RIZKY MAYASARI,K08,2. Sertifikasi guru PAI
-30,23104010098,ASYA AISYAL MARDLIYAH,K09,3. Investasi infrastruktur digital madrasah
-14,23104010046,SATRIA AHSANUL HIKAM,K09,3. Investasi infrastruktur digital madrasah
-9,23104010027,MOH. ALI MUSA,K09,3. Investasi infrastruktur digital madrasah
-20,23104010069,RATNA INDAH SARI,K10,1. Pemerataan kualitas pembelajaran PAI
-13,23104010038,AULIA AHMAD FURQON,K10,1. Pemerataan kualitas pembelajaran PAI
-2,23104010003,MUHAMMAD ATANA HAQY,K10,1. Pemerataan kualitas pembelajaran PAI
-10,23104010033,AUFANIDA RAHMA FINANDA,K11,2. Sertifikasi guru PAI
-6,23104010016,MUZAKKIR RIVAI DAULAY,K11,2. Sertifikasi guru PAI
-28,23104010086,DEVI ISTIYATI,K11,2. Sertifikasi guru PAI
-16,23104010051,IBTIDA LAILATUL HIKMAH,K12,3. Investasi infrastruktur digital madrasah
-25,23104010081,MUHAMAD ROZIQ ILHAMI,K12,3. Investasi infrastruktur digital madrasah
-7,23104010019,AGUN MUFTAHA NAJID,K12,3. Investasi infrastruktur digital madrasah
-12,23104010036,ANIS AZZAH NUR FADHILAH,K13,1. Pemerataan kualitas pembelajaran PAI
-35,23104010111,MAULIA RACHMA KHASANAH,K13,1. Pemerataan kualitas pembelajaran PAI
-8,23104010021,MAYA ARVINA FARADHISA,K14,2. Sertifikasi guru PAI
-22,23104010074,M. MUHTAROMI,K14,2. Sertifikasi guru PAI
+no,nim,nama,gender,kelompok,topik_uas
+40,23104010120,RIDWAN HIMAWAN,L,K01,1. Pemerataan kualitas pembelajaran PAI
+21,23104010073,ANANTHA DHARIL ALIFI,L,K01,1. Pemerataan kualitas pembelajaran PAI
+34,23104010109,NURUL IZZAHTUL FAUZIAH KADIR,P,K01,1. Pemerataan kualitas pembelajaran PAI
+23,23104010078,DELLA SYAHTIKA,P,K02,2. Sertifikasi guru PAI
+5,23104010011,MUHAMMAD IQBAL MA'RUF,L,K02,2. Sertifikasi guru PAI
+37,23104010115,ARDIYA FAHREZA WIRAATMAJA,L,K02,2. Sertifikasi guru PAI
+29,23104010095,MUHAMMAD ULIL ALBAAB,L,K03,3. Investasi infrastruktur digital madrasah
+4,23104010010,AZKIYAH ZAHRA SALEHA,P,K03,3. Investasi infrastruktur digital madrasah
+3,23104010008,NAILA FAUZIYAH,P,K03,3. Investasi infrastruktur digital madrasah
+33,23104010108,BAGUS ZAINUR ROHMAN,L,K04,1. Pemerataan kualitas pembelajaran PAI
+36,23104010113,MUCHLISATUN NISA,P,K04,1. Pemerataan kualitas pembelajaran PAI
+1,23104010002,RIDWAN NI'AM AL HAKIM,L,K04,1. Pemerataan kualitas pembelajaran PAI
+26,23104010082,RIZKY ZUARDI,L,K05,2. Sertifikasi guru PAI
+27,23104010083,RAFA GHANI ZAKIN VAUGHAN,L,K05,2. Sertifikasi guru PAI
+15,23104010048,INDRIANI PUTRI NUR SOLIKHAH,P,K05,2. Sertifikasi guru PAI
+24,23104010080,UMAILAH HASANAH,P,K06,3. Investasi infrastruktur digital madrasah
+19,23104010067,NASYWAA AULIA GUSTIVIANI,P,K06,3. Investasi infrastruktur digital madrasah
+32,23104010103,IYAS ZAKI MUSTOFA,L,K06,3. Investasi infrastruktur digital madrasah
+38,23104010116,HABIBAH KHANSA FATIMAH,P,K07,1. Pemerataan kualitas pembelajaran PAI
+31,23104010099,TAKHSYA BILLAHI ZALFA,P,K07,1. Pemerataan kualitas pembelajaran PAI
+18,23104010061,AFIFAH NUR CAHYANI,P,K07,1. Pemerataan kualitas pembelajaran PAI
+11,23104010035,FAIZAL DWI DARMAWAN,L,K08,2. Sertifikasi guru PAI
+17,23104010052,MALFA LIYA REVA LABIBAH,P,K08,2. Sertifikasi guru PAI
+39,23104010118,ANITA RIZKY MAYASARI,P,K08,2. Sertifikasi guru PAI
+30,23104010098,ASYA AISYAL MARDLIYAH,P,K09,3. Investasi infrastruktur digital madrasah
+14,23104010046,SATRIA AHSANUL HIKAM,L,K09,3. Investasi infrastruktur digital madrasah
+9,23104010027,MOH. ALI MUSA,L,K09,3. Investasi infrastruktur digital madrasah
+20,23104010069,RATNA INDAH SARI,P,K10,1. Pemerataan kualitas pembelajaran PAI
+13,23104010038,AULIA AHMAD FURQON,L,K10,1. Pemerataan kualitas pembelajaran PAI
+2,23104010003,MUHAMMAD ATANA HAQY,L,K10,1. Pemerataan kualitas pembelajaran PAI
+10,23104010033,AUFANIDA RAHMA FINANDA,P,K11,2. Sertifikasi guru PAI
+6,23104010016,MUZAKKIR RIVAI DAULAY,L,K11,2. Sertifikasi guru PAI
+28,23104010086,DEVI ISTIYATI,P,K11,2. Sertifikasi guru PAI
+16,23104010051,IBTIDA LAILATUL HIKMAH,P,K12,3. Investasi infrastruktur digital madrasah
+25,23104010081,MUHAMAD ROZIQ ILHAMI,L,K12,3. Investasi infrastruktur digital madrasah
+7,23104010019,AGUN MUFTAHA NAJID,L,K12,3. Investasi infrastruktur digital madrasah
+12,23104010036,ANIS AZZAH NUR FADHILAH,P,K13,1. Pemerataan kualitas pembelajaran PAI
+35,23104010111,MAULIA RACHMA KHASANAH,P,K13,1. Pemerataan kualitas pembelajaran PAI
+8,23104010021,MAYA ARVINA FARADHISA,P,K14,2. Sertifikasi guru PAI
+22,23104010074,M. MUHTAROMI,L,K14,2. Sertifikasi guru PAI

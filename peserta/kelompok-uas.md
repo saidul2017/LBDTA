@@ -27,185 +27,201 @@
 ### Kelompok K01
 
 **Topik UAS:** 1. Pemerataan kualitas pembelajaran PAI
+**Komposisi:** 3 orang (2 L, 1 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010120` | RIDWAN HIMAWAN |
-| 2 | `23104010073` | ANANTHA DHARIL ALIFI |
-| 3 | `23104010109` | NURUL IZZAHTUL FAUZIAH KADIR |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010120` | RIDWAN HIMAWAN | L |
+| 2 | `23104010073` | ANANTHA DHARIL ALIFI | L |
+| 3 | `23104010109` | NURUL IZZAHTUL FAUZIAH KADIR | P |
 
 ### Kelompok K02
 
 **Topik UAS:** 2. Sertifikasi guru PAI
+**Komposisi:** 3 orang (2 L, 1 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010078` | DELLA SYAHTIKA |
-| 2 | `23104010011` | MUHAMMAD IQBAL MA'RUF |
-| 3 | `23104010115` | ARDIYA FAHREZA WIRAATMAJA |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010078` | DELLA SYAHTIKA | P |
+| 2 | `23104010011` | MUHAMMAD IQBAL MA'RUF | L |
+| 3 | `23104010115` | ARDIYA FAHREZA WIRAATMAJA | L |
 
 ### Kelompok K03
 
 **Topik UAS:** 3. Investasi infrastruktur digital madrasah
+**Komposisi:** 3 orang (1 L, 2 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010095` | MUHAMMAD ULIL ALBAAB |
-| 2 | `23104010010` | AZKIYAH ZAHRA SALEHA |
-| 3 | `23104010008` | NAILA FAUZIYAH |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010095` | MUHAMMAD ULIL ALBAAB | L |
+| 2 | `23104010010` | AZKIYAH ZAHRA SALEHA | P |
+| 3 | `23104010008` | NAILA FAUZIYAH | P |
 
 ### Kelompok K04
 
 **Topik UAS:** 1. Pemerataan kualitas pembelajaran PAI
+**Komposisi:** 3 orang (2 L, 1 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010108` | BAGUS ZAINUR ROHMAN |
-| 2 | `23104010113` | MUCHLISATUN NISA |
-| 3 | `23104010002` | RIDWAN NI'AM AL HAKIM |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010108` | BAGUS ZAINUR ROHMAN | L |
+| 2 | `23104010113` | MUCHLISATUN NISA | P |
+| 3 | `23104010002` | RIDWAN NI'AM AL HAKIM | L |
 
 ### Kelompok K05
 
 **Topik UAS:** 2. Sertifikasi guru PAI
+**Komposisi:** 3 orang (2 L, 1 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010082` | RIZKY ZUARDI |
-| 2 | `23104010083` | RAFA GHANI ZAKIN VAUGHAN |
-| 3 | `23104010048` | INDRIANI PUTRI NUR SOLIKHAH |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010082` | RIZKY ZUARDI | L |
+| 2 | `23104010083` | RAFA GHANI ZAKIN VAUGHAN | L |
+| 3 | `23104010048` | INDRIANI PUTRI NUR SOLIKHAH | P |
 
 ### Kelompok K06
 
 **Topik UAS:** 3. Investasi infrastruktur digital madrasah
+**Komposisi:** 3 orang (1 L, 2 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010080` | UMAILAH HASANAH |
-| 2 | `23104010067` | NASYWAA AULIA GUSTIVIANI |
-| 3 | `23104010103` | IYAS ZAKI MUSTOFA |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010080` | UMAILAH HASANAH | P |
+| 2 | `23104010067` | NASYWAA AULIA GUSTIVIANI | P |
+| 3 | `23104010103` | IYAS ZAKI MUSTOFA | L |
 
 ### Kelompok K07
 
 **Topik UAS:** 1. Pemerataan kualitas pembelajaran PAI
+**Komposisi:** 3 orang (0 L, 3 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010116` | HABIBAH KHANSA FATIMAH |
-| 2 | `23104010099` | TAKHSYA BILLAHI ZALFA |
-| 3 | `23104010061` | AFIFAH NUR CAHYANI |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010116` | HABIBAH KHANSA FATIMAH | P |
+| 2 | `23104010099` | TAKHSYA BILLAHI ZALFA | P |
+| 3 | `23104010061` | AFIFAH NUR CAHYANI | P |
 
 ### Kelompok K08
 
 **Topik UAS:** 2. Sertifikasi guru PAI
+**Komposisi:** 3 orang (1 L, 2 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010035` | FAIZAL DWI DARMAWAN |
-| 2 | `23104010052` | MALFA LIYA REVA LABIBAH |
-| 3 | `23104010118` | ANITA RIZKY MAYASARI |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010035` | FAIZAL DWI DARMAWAN | L |
+| 2 | `23104010052` | MALFA LIYA REVA LABIBAH | P |
+| 3 | `23104010118` | ANITA RIZKY MAYASARI | P |
 
 ### Kelompok K09
 
 **Topik UAS:** 3. Investasi infrastruktur digital madrasah
+**Komposisi:** 3 orang (2 L, 1 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010098` | ASYA AISYAL MARDLIYAH |
-| 2 | `23104010046` | SATRIA AHSANUL HIKAM |
-| 3 | `23104010027` | MOH. ALI MUSA |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010098` | ASYA AISYAL MARDLIYAH | P |
+| 2 | `23104010046` | SATRIA AHSANUL HIKAM | L |
+| 3 | `23104010027` | MOH. ALI MUSA | L |
 
 ### Kelompok K10
 
 **Topik UAS:** 1. Pemerataan kualitas pembelajaran PAI
+**Komposisi:** 3 orang (2 L, 1 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010069` | RATNA INDAH SARI |
-| 2 | `23104010038` | AULIA AHMAD FURQON |
-| 3 | `23104010003` | MUHAMMAD ATANA HAQY |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010069` | RATNA INDAH SARI | P |
+| 2 | `23104010038` | AULIA AHMAD FURQON | L |
+| 3 | `23104010003` | MUHAMMAD ATANA HAQY | L |
 
 ### Kelompok K11
 
 **Topik UAS:** 2. Sertifikasi guru PAI
+**Komposisi:** 3 orang (1 L, 2 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010033` | AUFANIDA RAHMA FINANDA |
-| 2 | `23104010016` | MUZAKKIR RIVAI DAULAY |
-| 3 | `23104010086` | DEVI ISTIYATI |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010033` | AUFANIDA RAHMA FINANDA | P |
+| 2 | `23104010016` | MUZAKKIR RIVAI DAULAY | L |
+| 3 | `23104010086` | DEVI ISTIYATI | P |
 
 ### Kelompok K12
 
 **Topik UAS:** 3. Investasi infrastruktur digital madrasah
+**Komposisi:** 3 orang (2 L, 1 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010051` | IBTIDA LAILATUL HIKMAH |
-| 2 | `23104010081` | MUHAMAD ROZIQ ILHAMI |
-| 3 | `23104010019` | AGUN MUFTAHA NAJID |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010051` | IBTIDA LAILATUL HIKMAH | P |
+| 2 | `23104010081` | MUHAMAD ROZIQ ILHAMI | L |
+| 3 | `23104010019` | AGUN MUFTAHA NAJID | L |
 
 ### Kelompok K13
 
 **Topik UAS:** 1. Pemerataan kualitas pembelajaran PAI
+**Komposisi:** 2 orang (0 L, 2 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010036` | ANIS AZZAH NUR FADHILAH |
-| 2 | `23104010111` | MAULIA RACHMA KHASANAH |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010036` | ANIS AZZAH NUR FADHILAH | P |
+| 2 | `23104010111` | MAULIA RACHMA KHASANAH | P |
 
 ### Kelompok K14
 
 **Topik UAS:** 2. Sertifikasi guru PAI
+**Komposisi:** 2 orang (1 L, 1 P)
 
-| No | NIM | Nama |
-|---|---|---|
-| 1 | `23104010021` | MAYA ARVINA FARADHISA |
-| 2 | `23104010074` | M. MUHTAROMI |
+| No | NIM | Nama | Gender* |
+|---|---|---|---|
+| 1 | `23104010021` | MAYA ARVINA FARADHISA | P |
+| 2 | `23104010074` | M. MUHTAROMI | L |
+
+_*Kolom Gender adalah tebakan heuristik, bukan otoritatif. Lihat `peserta/README.md` untuk disclaimer._
 
 ## Tabel Pencarian (urut NIM)
 
-| NIM | Nama | Kelompok | Topik |
-|---|---|---|---|
-| `23104010002` | RIDWAN NI'AM AL HAKIM | **K04** | Topik 1 |
-| `23104010003` | MUHAMMAD ATANA HAQY | **K10** | Topik 1 |
-| `23104010008` | NAILA FAUZIYAH | **K03** | Topik 3 |
-| `23104010010` | AZKIYAH ZAHRA SALEHA | **K03** | Topik 3 |
-| `23104010011` | MUHAMMAD IQBAL MA'RUF | **K02** | Topik 2 |
-| `23104010016` | MUZAKKIR RIVAI DAULAY | **K11** | Topik 2 |
-| `23104010019` | AGUN MUFTAHA NAJID | **K12** | Topik 3 |
-| `23104010021` | MAYA ARVINA FARADHISA | **K14** | Topik 2 |
-| `23104010027` | MOH. ALI MUSA | **K09** | Topik 3 |
-| `23104010033` | AUFANIDA RAHMA FINANDA | **K11** | Topik 2 |
-| `23104010035` | FAIZAL DWI DARMAWAN | **K08** | Topik 2 |
-| `23104010036` | ANIS AZZAH NUR FADHILAH | **K13** | Topik 1 |
-| `23104010038` | AULIA AHMAD FURQON | **K10** | Topik 1 |
-| `23104010046` | SATRIA AHSANUL HIKAM | **K09** | Topik 3 |
-| `23104010048` | INDRIANI PUTRI NUR SOLIKHAH | **K05** | Topik 2 |
-| `23104010051` | IBTIDA LAILATUL HIKMAH | **K12** | Topik 3 |
-| `23104010052` | MALFA LIYA REVA LABIBAH | **K08** | Topik 2 |
-| `23104010061` | AFIFAH NUR CAHYANI | **K07** | Topik 1 |
-| `23104010067` | NASYWAA AULIA GUSTIVIANI | **K06** | Topik 3 |
-| `23104010069` | RATNA INDAH SARI | **K10** | Topik 1 |
-| `23104010073` | ANANTHA DHARIL ALIFI | **K01** | Topik 1 |
-| `23104010074` | M. MUHTAROMI | **K14** | Topik 2 |
-| `23104010078` | DELLA SYAHTIKA | **K02** | Topik 2 |
-| `23104010080` | UMAILAH HASANAH | **K06** | Topik 3 |
-| `23104010081` | MUHAMAD ROZIQ ILHAMI | **K12** | Topik 3 |
-| `23104010082` | RIZKY ZUARDI | **K05** | Topik 2 |
-| `23104010083` | RAFA GHANI ZAKIN VAUGHAN | **K05** | Topik 2 |
-| `23104010086` | DEVI ISTIYATI | **K11** | Topik 2 |
-| `23104010095` | MUHAMMAD ULIL ALBAAB | **K03** | Topik 3 |
-| `23104010098` | ASYA AISYAL MARDLIYAH | **K09** | Topik 3 |
-| `23104010099` | TAKHSYA BILLAHI ZALFA | **K07** | Topik 1 |
-| `23104010103` | IYAS ZAKI MUSTOFA | **K06** | Topik 3 |
-| `23104010108` | BAGUS ZAINUR ROHMAN | **K04** | Topik 1 |
-| `23104010109` | NURUL IZZAHTUL FAUZIAH KADIR | **K01** | Topik 1 |
-| `23104010111` | MAULIA RACHMA KHASANAH | **K13** | Topik 1 |
-| `23104010113` | MUCHLISATUN NISA | **K04** | Topik 1 |
-| `23104010115` | ARDIYA FAHREZA WIRAATMAJA | **K02** | Topik 2 |
-| `23104010116` | HABIBAH KHANSA FATIMAH | **K07** | Topik 1 |
-| `23104010118` | ANITA RIZKY MAYASARI | **K08** | Topik 2 |
-| `23104010120` | RIDWAN HIMAWAN | **K01** | Topik 1 |
+| NIM | Nama | Gender* | Kelompok | Topik |
+|---|---|---|---|---|
+| `23104010002` | RIDWAN NI'AM AL HAKIM | L | **K04** | Topik 1 |
+| `23104010003` | MUHAMMAD ATANA HAQY | L | **K10** | Topik 1 |
+| `23104010008` | NAILA FAUZIYAH | P | **K03** | Topik 3 |
+| `23104010010` | AZKIYAH ZAHRA SALEHA | P | **K03** | Topik 3 |
+| `23104010011` | MUHAMMAD IQBAL MA'RUF | L | **K02** | Topik 2 |
+| `23104010016` | MUZAKKIR RIVAI DAULAY | L | **K11** | Topik 2 |
+| `23104010019` | AGUN MUFTAHA NAJID | L | **K12** | Topik 3 |
+| `23104010021` | MAYA ARVINA FARADHISA | P | **K14** | Topik 2 |
+| `23104010027` | MOH. ALI MUSA | L | **K09** | Topik 3 |
+| `23104010033` | AUFANIDA RAHMA FINANDA | P | **K11** | Topik 2 |
+| `23104010035` | FAIZAL DWI DARMAWAN | L | **K08** | Topik 2 |
+| `23104010036` | ANIS AZZAH NUR FADHILAH | P | **K13** | Topik 1 |
+| `23104010038` | AULIA AHMAD FURQON | L | **K10** | Topik 1 |
+| `23104010046` | SATRIA AHSANUL HIKAM | L | **K09** | Topik 3 |
+| `23104010048` | INDRIANI PUTRI NUR SOLIKHAH | P | **K05** | Topik 2 |
+| `23104010051` | IBTIDA LAILATUL HIKMAH | P | **K12** | Topik 3 |
+| `23104010052` | MALFA LIYA REVA LABIBAH | P | **K08** | Topik 2 |
+| `23104010061` | AFIFAH NUR CAHYANI | P | **K07** | Topik 1 |
+| `23104010067` | NASYWAA AULIA GUSTIVIANI | P | **K06** | Topik 3 |
+| `23104010069` | RATNA INDAH SARI | P | **K10** | Topik 1 |
+| `23104010073` | ANANTHA DHARIL ALIFI | L | **K01** | Topik 1 |
+| `23104010074` | M. MUHTAROMI | L | **K14** | Topik 2 |
+| `23104010078` | DELLA SYAHTIKA | P | **K02** | Topik 2 |
+| `23104010080` | UMAILAH HASANAH | P | **K06** | Topik 3 |
+| `23104010081` | MUHAMAD ROZIQ ILHAMI | L | **K12** | Topik 3 |
+| `23104010082` | RIZKY ZUARDI | L | **K05** | Topik 2 |
+| `23104010083` | RAFA GHANI ZAKIN VAUGHAN | L | **K05** | Topik 2 |
+| `23104010086` | DEVI ISTIYATI | P | **K11** | Topik 2 |
+| `23104010095` | MUHAMMAD ULIL ALBAAB | L | **K03** | Topik 3 |
+| `23104010098` | ASYA AISYAL MARDLIYAH | P | **K09** | Topik 3 |
+| `23104010099` | TAKHSYA BILLAHI ZALFA | P | **K07** | Topik 1 |
+| `23104010103` | IYAS ZAKI MUSTOFA | L | **K06** | Topik 3 |
+| `23104010108` | BAGUS ZAINUR ROHMAN | L | **K04** | Topik 1 |
+| `23104010109` | NURUL IZZAHTUL FAUZIAH KADIR | P | **K01** | Topik 1 |
+| `23104010111` | MAULIA RACHMA KHASANAH | P | **K13** | Topik 1 |
+| `23104010113` | MUCHLISATUN NISA | P | **K04** | Topik 1 |
+| `23104010115` | ARDIYA FAHREZA WIRAATMAJA | L | **K02** | Topik 2 |
+| `23104010116` | HABIBAH KHANSA FATIMAH | P | **K07** | Topik 1 |
+| `23104010118` | ANITA RIZKY MAYASARI | P | **K08** | Topik 2 |
+| `23104010120` | RIDWAN HIMAWAN | L | **K01** | Topik 1 |
 
 ---
 
