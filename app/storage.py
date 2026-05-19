@@ -282,3 +282,146 @@ class Storage:
     def delete_nilai(self, kelompok: str) -> None:
         with self._conn() as c:
             c.execute("DELETE FROM nilai WHERE kelompok = ?", (kelompok,))
+
+    # ---------- kuis (skor mahasiswa per modul) ----------
+
+    def _ensure_kuis_table(self) -> None:
+        with self._conn() as c:
+            c.executescript(
+                """
+                CREATE TABLE IF NOT EXISTS kuis_skor (
+                    nim          TEXT NOT NULL,
+                    modul        TEXT NOT NULL,
+                    skor         INTEGER DEFAULT 0,
+                    total_soal   INTEGER DEFAULT 0,
+                    persen       REAL DEFAULT 0,
+                    waktu_detik  INTEGER DEFAULT 0,
+                    attempts     INTEGER DEFAULT 1,
+                    updated_at   TEXT NOT NULL,
+                    PRIMARY KEY (nim, modul)
+                );
+                CREATE TABLE IF NOT EXISTS progres_materi (
+                    nim          TEXT NOT NULL,
+                    modul        TEXT NOT NULL,
+                    dibaca       INTEGER DEFAULT 0,
+                    updated_at   TEXT NOT NULL,
+                    PRIMARY KEY (nim, modul)
+                );
+                """
+            )
+
+    def save_kuis_skor(
+        self,
+        nim: str,
+        modul: str,
+        skor: int,
+        total_soal: int,
+        waktu_detik: int = 0,
+    ) -> Dict:
+        """Simpan skor kuis. Skor terbaik (tertinggi) yang dipertahankan.
+
+        Returns dict dengan info skor lama vs baru, dan apakah ini PB.
+        """
+        self._ensure_kuis_table()
+        persen = round(skor / total_soal * 100, 1) if total_soal else 0.0
+        with self._conn() as c:
+            row = c.execute(
+                "SELECT skor, attempts FROM kuis_skor WHERE nim=? AND modul=?",
+                (nim, modul),
+            ).fetchone()
+            if row is None:
+                # First attempt
+                c.execute(
+                    """
+                    INSERT INTO kuis_skor
+                    (nim, modul, skor, total_soal, persen, waktu_detik,
+                     attempts, updated_at)
+                    VALUES (?, ?, ?, ?, ?, ?, 1, ?)
+                    """,
+                    (nim, modul, skor, total_soal, persen, waktu_detik,
+                     _utcnow_iso()),
+                )
+                return {"is_new": True, "is_pb": True, "skor_lama": 0,
+                        "skor_baru": skor, "persen": persen}
+            old_skor, old_attempts = row
+            new_attempts = old_attempts + 1
+            is_pb = skor > old_skor
+            if is_pb:
+                c.execute(
+                    """
+                    UPDATE kuis_skor SET skor=?, total_soal=?, persen=?,
+                       waktu_detik=?, attempts=?, updated_at=?
+                    WHERE nim=? AND modul=?
+                    """,
+                    (skor, total_soal, persen, waktu_detik, new_attempts,
+                     _utcnow_iso(), nim, modul),
+                )
+            else:
+                # Hanya update attempt count, jaga skor terbaik
+                c.execute(
+                    "UPDATE kuis_skor SET attempts=?, updated_at=? "
+                    "WHERE nim=? AND modul=?",
+                    (new_attempts, _utcnow_iso(), nim, modul),
+                )
+            return {"is_new": False, "is_pb": is_pb, "skor_lama": old_skor,
+                    "skor_baru": skor if is_pb else old_skor,
+                    "persen": persen}
+
+    def get_kuis_skor(self, nim: str, modul: str) -> Optional[Dict]:
+        self._ensure_kuis_table()
+        cols = ["nim", "modul", "skor", "total_soal", "persen",
+                "waktu_detik", "attempts", "updated_at"]
+        with self._conn() as c:
+            row = c.execute(
+                f"SELECT {', '.join(cols)} FROM kuis_skor "
+                "WHERE nim=? AND modul=?",
+                (nim, modul),
+            ).fetchone()
+        return dict(zip(cols, row)) if row else None
+
+    def list_kuis_skor_per_nim(self, nim: str) -> List[Dict]:
+        self._ensure_kuis_table()
+        cols = ["nim", "modul", "skor", "total_soal", "persen",
+                "waktu_detik", "attempts", "updated_at"]
+        with self._conn() as c:
+            rows = c.execute(
+                f"SELECT {', '.join(cols)} FROM kuis_skor "
+                "WHERE nim=? ORDER BY modul",
+                (nim,),
+            ).fetchall()
+        return [dict(zip(cols, r)) for r in rows]
+
+    def list_all_kuis_skor(self) -> List[Dict]:
+        self._ensure_kuis_table()
+        cols = ["nim", "modul", "skor", "total_soal", "persen",
+                "waktu_detik", "attempts", "updated_at"]
+        with self._conn() as c:
+            rows = c.execute(
+                f"SELECT {', '.join(cols)} FROM kuis_skor "
+                "ORDER BY nim, modul"
+            ).fetchall()
+        return [dict(zip(cols, r)) for r in rows]
+
+    # ---------- progres baca materi ----------
+
+    def mark_modul_dibaca(self, nim: str, modul: str) -> None:
+        self._ensure_kuis_table()
+        with self._conn() as c:
+            c.execute(
+                """
+                INSERT INTO progres_materi (nim, modul, dibaca, updated_at)
+                VALUES (?, ?, 1, ?)
+                ON CONFLICT(nim, modul) DO UPDATE SET
+                    dibaca=1, updated_at=excluded.updated_at
+                """,
+                (nim, modul, _utcnow_iso()),
+            )
+
+    def list_modul_dibaca(self, nim: str) -> List[str]:
+        self._ensure_kuis_table()
+        with self._conn() as c:
+            rows = c.execute(
+                "SELECT modul FROM progres_materi WHERE nim=? AND dibaca=1",
+                (nim,),
+            ).fetchall()
+        return [r[0] for r in rows]

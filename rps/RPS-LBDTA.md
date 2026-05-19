@@ -88,10 +88,11 @@ kebijakan berbasis bukti.
 
 | Komponen | Bobot | Keterangan |
 |---|---|---|
-| T01 — Pemetaan Sumber Data | 20% | Individu, ~3 hari setelah P1 |
-| T02 — Notebook Analisis | 30% | Kelompok, dikumpulkan sebelum P3 |
-| T03 — *Policy Brief* Mini | 40% | Kelompok, dipresentasikan akhir P3 |
-| Partisipasi & refleksi | 10% | Aktif diskusi, jurnal belajar, *peer feedback* |
+| Kuis Interaktif (M01-M03) | 10% | Skor terbaik dari attempts, di chatbot |
+| T01 — Pemetaan Sumber Data | 15% | Individu, ~3 hari setelah P1 |
+| T02 — Notebook Analisis | 25% | Kelompok, dikumpulkan sebelum P3 |
+| T03 — *Policy Brief* Mini | 35% | Kelompok, dipresentasikan akhir P3 |
+| Partisipasi & refleksi | 15% | Aktif diskusi, jurnal belajar, *peer feedback* |
 
 > **Catatan etika:** Plagiarisme dan fabrikasi data adalah pelanggaran
 > berat yang bertentangan dengan prinsip *ṣidq* dan **ḥifẓ al-ʿaql**

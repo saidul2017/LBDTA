@@ -176,11 +176,13 @@ st.divider()
 # ============================================================
 # Tab utama
 # ============================================================
-tab_viz, tab_sesi, tab_belum, tab_detail, tab_nilai, tab_export = st.tabs([
+(tab_viz, tab_sesi, tab_belum, tab_detail, tab_kuis,
+ tab_nilai, tab_export) = st.tabs([
     "📊 Statistik",
     "📋 Daftar Sesi",
     "🚫 Belum Pakai",
     "🔎 Detail Sesi",
+    "🎯 Hasil Kuis",
     "📝 Nilai",
     "💾 Ekspor",
 ])
@@ -385,6 +387,113 @@ with tab_detail:
                 with st.chat_message(m["role"]):
                     st.caption(m.get("created_at", ""))
                     st.markdown(m["content"])
+
+
+# ----- Hasil Kuis -----
+with tab_kuis:
+    st.markdown("### Hasil Kuis Mahasiswa")
+    st.caption(
+        "Skor terbaik per mahasiswa per modul. Mahasiswa boleh ulang "
+        "kuis tanpa batas; yang tersimpan adalah skor tertinggi."
+    )
+
+    all_skor = storage.list_all_kuis_skor()
+
+    if not all_skor:
+        st.info("Belum ada mahasiswa yang menyelesaikan kuis.")
+    else:
+        # Statistik agregat
+        from quiz_data import get_modul_list, get_quiz
+        modul_kodes = get_modul_list()
+        total_mhs = roster["total_mahasiswa"] if roster else 0
+
+        # Mahasiswa unik yang sudah kuis
+        nim_kuis = {s["nim"] for s in all_skor}
+
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric(
+            "Mhs sudah kuis",
+            f"{len(nim_kuis)}/{total_mhs}" if total_mhs else len(nim_kuis),
+        )
+        total_attempts = sum(s["attempts"] for s in all_skor)
+        m2.metric("Total attempt", total_attempts)
+        rata_persen = sum(s["persen"] for s in all_skor) / len(all_skor)
+        m3.metric("Rata-rata skor", f"{rata_persen:.1f}/100")
+        lulus_70 = sum(1 for s in all_skor if s["persen"] >= 70)
+        m4.metric("Skor ≥70", f"{lulus_70}/{len(all_skor)}")
+
+        st.divider()
+
+        # Statistik per modul
+        st.markdown("#### Rata-rata Skor per Modul")
+        per_modul: dict = {}
+        for s in all_skor:
+            per_modul.setdefault(s["modul"], []).append(s["persen"])
+        chart_data = {
+            k: sum(v) / len(v) for k, v in sorted(per_modul.items())
+        }
+        st.bar_chart(chart_data)
+
+        st.divider()
+
+        # Tabel detail
+        st.markdown("#### Tabel Skor per Mahasiswa per Modul")
+        # Bangun matrix: row = NIM, col = modul
+        nim_rows: dict = {}
+        for s in all_skor:
+            nim_rows.setdefault(s["nim"], {})[s["modul"]] = s
+
+        # Tambah info dari roster
+        if roster:
+            for nim in roster.get("peserta", {}):
+                nim_rows.setdefault(nim, {})
+
+        display_rows = []
+        for nim in sorted(nim_rows.keys()):
+            row = {"NIM": nim}
+            if roster and nim in roster.get("peserta", {}):
+                p = roster["peserta"][nim]
+                row["Nama"] = p["nama"]
+                row["Kelompok"] = p["kelompok"]
+            for kode in modul_kodes:
+                s = nim_rows[nim].get(kode)
+                if s:
+                    row[kode] = (
+                        f"{s['persen']:.0f} ({s['attempts']}×)"
+                    )
+                else:
+                    row[kode] = "—"
+            display_rows.append(row)
+
+        st.dataframe(display_rows, use_container_width=True,
+                     hide_index=True)
+
+        st.divider()
+
+        # Soal tersulit per modul
+        st.markdown("#### Mahasiswa yang Stuck (skor <70)")
+        stuck = [s for s in all_skor if s["persen"] < 70]
+        if stuck:
+            stuck_rows = []
+            for s in sorted(stuck, key=lambda x: x["persen"]):
+                p = (roster.get("peserta", {}).get(s["nim"], {})
+                     if roster else {})
+                stuck_rows.append({
+                    "NIM": s["nim"],
+                    "Nama": p.get("nama", "—"),
+                    "Modul": s["modul"],
+                    "Skor": f"{s['skor']}/{s['total_soal']}",
+                    "Persen": f"{s['persen']:.0f}",
+                    "Attempt": s["attempts"],
+                })
+            st.dataframe(stuck_rows, use_container_width=True,
+                         hide_index=True)
+            st.caption(
+                "💡 Pertimbangkan untuk follow-up mahasiswa di atas dengan "
+                "saran membaca ulang modul terkait atau diskusi langsung."
+            )
+        else:
+            st.success("✅ Semua skor kuis ≥70. Pemahaman kelas baik!")
 
 
 # ----- Nilai -----
