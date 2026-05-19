@@ -1,44 +1,32 @@
-# Rencana Pembelajaran Semester (RPS)
+# Rencana Pembelajaran Semester (RPS) — Versi Ringkas 3 Pertemuan
 
-> **Catatan:** Dokumen ini adalah **draft template** yang disusun sebagai
-> titik awal. Bukan kutipan dari dokumen resmi Kemenag/Diktis. Dosen pengampu
-> wajib menyesuaikan **kode mata kuliah, CPL, SKS, dan jumlah peserta** sesuai
-> kurikulum prodi masing-masing.
+> **Catatan:** Dokumen ini adalah **draft template** versi *intensif* — hanya
+> 3 pertemuan. Cocok untuk **workshop, modul tambahan, atau pengantar**
+> sebelum mata kuliah penuh. Bukan kutipan dokumen resmi Kemenag/Diktis.
+> Dosen pengampu wajib menyesuaikan dengan konteks lembaga.
 
-## 1. Identitas Mata Kuliah
+## 1. Identitas Mata Kuliah / Modul
 
 | Komponen | Isian |
 |---|---|
-| Nama Mata Kuliah | Literasi Big Data |
-| Kode Mata Kuliah | *(isi sesuai kurikulum)* |
-| Bobot SKS | 2 SKS *(saran: 1 teori + 1 praktikum)* |
-| Semester | *(isi)* |
+| Nama | Literasi Big Data (versi ringkas) |
+| Kode | *(isi sesuai kurikulum)* |
+| Bobot | 1 SKS *(saran: 3 × 100 menit + tugas mandiri)* |
 | Program Studi | Pendidikan Agama Islam (PAI) |
-| Jenjang | S1 |
 | Prasyarat | Statistika Pendidikan / Pengantar TIK |
 | Dosen Pengampu | *(isi)* |
 
-## 2. Deskripsi Mata Kuliah
+## 2. Deskripsi Modul
 
-Mata kuliah ini membekali calon guru PAI dengan kompetensi **literasi data
-dan big data** dalam konteks pendidikan Islam. Mahasiswa dilatih membaca,
-mengelola, menganalisis, memvisualisasikan, dan menginterpretasi data
-pendidikan dari sumber publik (mis. EMIS Kemenag, Simpatika, BPS) maupun
-data lapangan, serta menarik implikasi pedagogis dan kebijakan dengan
-landasan etika Islam (*amānah*, *tabayyun*, *ṣidq*, *ʿadl*).
+Modul intensif **3 pertemuan** yang membekali calon guru PAI dengan literasi
+data pendidikan Islam. Mahasiswa dilatih membaca, menganalisis, dan
+menafsirkan data pendidikan dengan landasan etika Islam (*amānah*,
+*tabayyun*, *ṣidq*, *ʿadl*), serta menyusun rekomendasi kebijakan berbasis
+bukti.
 
 ## 3. Capaian Pembelajaran
 
-### 3.1 Capaian Pembelajaran Lulusan (CPL) yang dibebankan
-*(Sesuaikan dengan CPL prodi PAI di institusi Bapak/Ibu — contoh:)*
-
-- **CPL-S** : Bertanggung jawab secara profesional dan etis dalam
-  pengelolaan informasi pendidikan.
-- **CPL-P** : Menguasai konsep dasar literasi data dan analitika pendidikan.
-- **CPL-KU** : Mampu mengambil keputusan tepat berdasarkan analisis data.
-- **CPL-KK** : Mampu merancang pembelajaran PAI berbasis bukti (*evidence-based*).
-
-### 3.2 Capaian Pembelajaran Mata Kuliah (CPMK)
+### 3.1 CPMK (5 butir, dipertahankan dari versi penuh)
 
 | Kode | Rumusan |
 |---|---|
@@ -48,103 +36,73 @@ landasan etika Islam (*amānah*, *tabayyun*, *ṣidq*, *ʿadl*).
 | CPMK-4 | Menginterpretasi pola data dengan kesadaran *confounder* dan batasan inferensi. |
 | CPMK-5 | Menyusun rekomendasi kebijakan / pembelajaran PAI berbasis data dengan landasan etika Islam. |
 
-### 3.3 Sub-CPMK per pertemuan
-*Lihat tabel rencana mingguan pada bagian 5.*
+## 4. Rencana Pembelajaran (3 Pertemuan)
 
-## 4. Bahan Kajian
-
-1. Konsep literasi data & big data (5V: *Volume, Velocity, Variety, Veracity, Value*)
-2. Lanskap data pendidikan Islam (EMIS, Simpatika, BPS, AKMI, dsb.)
-3. Etika data dalam perspektif Islam
-4. Jenis data, skala pengukuran, dan struktur tabel
-5. Pengumpulan data: survei, observasi, web scraping, API
-6. Pembersihan data (*data cleaning*) dan transformasi
-7. Statistika deskriptif untuk pendidikan
-8. Visualisasi data dan *data storytelling*
-9. Analisis korelasional dan dasar inferensi
-10. Pengantar *machine learning* untuk pendidikan (konsep, bukan koding mendalam)
-11. Dashboard pendidikan
-12. Studi kasus madrasah
-13. Pengambilan kebijakan pendidikan berbasis data (EBPM)
-
-## 5. Rencana Pembelajaran Mingguan (16 Pertemuan)
-
-| Pert | Topik | Sub-CPMK | Aktivitas | Asesmen |
+| Pert | Tema | Sub-CPMK | Aktivitas | Asesmen |
 |---|---|---|---|---|
-| 1 | Orientasi & kontrak kuliah; Apa itu literasi data & big data | Memahami ruang lingkup MK | Diskusi pembuka, demo dataset | Refleksi awal |
-| 2 | Lanskap data pendidikan Islam (EMIS, Simpatika, BPS, AKMI, PISA) | Mengenali sumber data sahih | Eksplorasi portal data | Lembar observasi |
-| 3 | Etika data dalam perspektif Islam (*amānah, tabayyun, ṣidq*) | Menerapkan etika data | Diskusi kasus etis | Esai pendek |
-| 4 | Jenis data, skala pengukuran, struktur tabel | Mengklasifikasi variabel | Latihan klasifikasi variabel | Kuis |
-| 5 | Pengumpulan data: survei, observasi, scraping, API | Merancang instrumen sederhana | Praktikum survei mini | Instrumen survei |
-| 6 | Pembersihan & transformasi data | Membersihkan data kotor | Praktikum *data cleaning* | Notebook |
-| 7 | Statistika deskriptif untuk pendidikan | Menghitung & menafsirkan | Praktikum agregasi | Laporan ringkas |
-| 8 | **Ujian Tengah Semester (UTS)** | CPMK 1–3 | Tes tertulis + studi kasus | UTS |
-| 9 | Visualisasi data & *data storytelling* | Memilih chart tepat | Praktikum visualisasi | Poster data |
-| 10 | Analisis korelasional & batasan inferensi | Menafsir korelasi vs kausalitas | Praktikum korelasi | Notebook |
-| 11 | Pengantar ML untuk pendidikan (konsep) | Memahami klasifikasi & klaster | Demo *no-code* | Refleksi |
-| 12 | Dashboard pendidikan (Google Looker / Power BI / Streamlit) | Merancang dashboard | Praktikum dashboard | Dashboard mini |
-| 13 | Studi kasus: madrasah & *outcome* pembelajaran PAI | Mengintegrasikan kompetensi | PBL kelompok | Progres proyek |
-| 14 | Pengambilan kebijakan PAI berbasis data (EBPM) | Menyusun rekomendasi | Diskusi panel simulasi | Draft *policy brief* |
-| 15 | Presentasi proyek mahasiswa | Komunikasi hasil analisis | Presentasi & tanya-jawab | Penilaian sejawat |
-| 16 | **Ujian Akhir Semester (UAS)** | CPMK 1–5 | Submit *policy brief* final | UAS (proyek) |
+| **1** | **Pondasi**: Konsep big data, lanskap data pendidikan Islam (EMIS, Simpatika, BPS, AKMI), pengantar etika data Islam | CPMK 1, 2 | Mini-lecture, eksplorasi portal data, diskusi kasus | T01: Pemetaan Sumber Data (individu) |
+| **2** | **Praktik**: Pembersihan data, statistika deskriptif, visualisasi & *data storytelling* | CPMK 3 | Praktikum dataset sintetis madrasah, *live coding* spreadsheet/Python | T02: Notebook Analisis (kelompok 2–3) |
+| **3** | **Sintesis**: Korelasi vs kausalitas, etika mendalam (*amānah, tabayyun, ṣidq, ʿadl*), penyusunan *policy brief* | CPMK 4, 5 | Studi kasus *confounder*, simulasi panel kebijakan | T03: *Policy Brief* Mini (kelompok 2–3) |
 
-## 6. Metode Pembelajaran
+### Sebaran waktu tiap pertemuan (saran 100 menit)
 
-- **Ceramah-diskusi** untuk pembentukan konsep
-- **Praktikum berbasis dataset** (Spreadsheet → Python/R sesuai kesiapan kelas)
-- **Project-Based Learning (PBL)** untuk *capstone* berupa *policy brief*
-- **Pendampingan asisten AI** dengan pendekatan Socratic (lihat
-  `.kiro/steering/asisten-pai.md`)
+```
+0–10    Pembuka, doa, apersepsi
+10–35   Konsep / mini-lecture
+35–80   Aktivitas inti (diskusi / praktikum / studi kasus)
+80–95   Sintesis dosen + tanggapan
+95–100  Penutup, refleksi, penugasan
+```
 
-## 7. Penilaian
+## 5. Penilaian
 
 | Komponen | Bobot | Keterangan |
 |---|---|---|
-| Partisipasi & refleksi | 10% | Kehadiran aktif, jurnal belajar |
-| Tugas mingguan | 25% | 6–8 tugas, sebagian individu sebagian kelompok |
-| UTS | 25% | Konsep + analisis dataset pendek |
-| Proyek akhir (*policy brief*) | 30% | Dokumen 8–12 hal + dashboard + presentasi |
-| Etika & integritas akademik | 10% | Sitasi, kejujuran sumber, originalitas |
+| T01 — Pemetaan Sumber Data | 20% | Individu, ~3 hari setelah P1 |
+| T02 — Notebook Analisis | 30% | Kelompok, dikumpulkan sebelum P3 |
+| T03 — *Policy Brief* Mini | 40% | Kelompok, dipresentasikan akhir P3 |
+| Partisipasi & refleksi | 10% | Aktif diskusi, jurnal belajar |
 
 > **Catatan etika:** Plagiarisme dan fabrikasi data adalah pelanggaran berat
-> yang bertentangan dengan prinsip *ṣidq* (kejujuran). Tugas yang terbukti
-> melanggar dinilai nol tanpa pengecualian.
+> yang bertentangan dengan prinsip *ṣidq*. Tugas yang terbukti melanggar
+> dinilai nol.
 
-## 8. Referensi
+## 6. Metode
 
-> Daftar berikut adalah **saran awal**. Dosen pengampu silakan menambah/
-> mengganti sesuai ketersediaan dan kebijakan prodi.
+- **Ceramah-diskusi singkat** untuk konsep
+- **Praktikum berbasis dataset sintetis** (`dataset/emis-sintetis/`)
+- **Project-Based Learning** untuk *capstone* berupa *policy brief* mini
+- **Pendampingan asisten AI** dengan pendekatan Socratic
+  (lihat `.kiro/steering/asisten-pai.md`)
 
-### Referensi utama (saran)
-- Provost, F., & Fawcett, T. *Data Science for Business*.
-- Wickham, H., & Grolemund, G. *R for Data Science* (versi daring tersedia).
-- McKinney, W. *Python for Data Analysis*.
+## 7. Referensi (saran awal)
+
+### Utama
+- Provost, F., & Fawcett, T. *Data Science for Business* — bab pengantar.
+- Wickham, H., & Grolemund, G. *R for Data Science* — bab visualisasi
+  (versi daring tersedia).
 - Kemenag RI. Dokumen tata kelola data EMIS *(versi terbaru)*.
 
-### Referensi pendukung perspektif Islam
+### Perspektif Islam
 - Kitab tafsir Q.S. al-Ḥujurāt: 6 (prinsip *tabayyun*) — pilihan tafsir
   diserahkan dosen pengampu.
 - Buku/artikel etika informasi dalam Islam — mohon ditambahkan.
 
 ### Sumber data publik
-- Portal EMIS Kemenag — `emispendis.kemenag.go.id`
+- EMIS Kemenag — `emispendis.kemenag.go.id`
 - Simpatika — `simpatika.kemenag.go.id`
 - BPS — `bps.go.id`
-- Pusat Asesmen Kemdikbudristek (AKMI/AKM) — *(URL diperbarui dosen)*
+- Pusat Asesmen Kemdikbudristek (AKMI/AKM)
 
-## 9. Tata Tertib Mata Kuliah
+## 8. Tata Tertib
 
-1. Mahasiswa wajib mencantumkan sumber pada setiap klaim akademis.
-2. Penggunaan asisten AI **diperbolehkan dan didorong** sebagai mitra belajar,
-   namun mahasiswa **wajib menyatakan penggunaannya** di laporan dan tetap
-   bertanggung jawab atas isi tugas.
-3. Data pribadi nyata (nama siswa, NISN, dsb.) **tidak boleh** digunakan
-   tanpa izin dan anonimisasi. Untuk latihan, gunakan dataset sintetis yang
-   disediakan.
-4. Deadline tugas bersifat tegas; perpanjangan hanya atas izin dosen
-   dengan alasan yang sah.
+1. Setiap klaim akademis wajib bersumber.
+2. Penggunaan asisten AI **diperbolehkan dan didorong** sebagai mitra
+   belajar; mahasiswa **wajib menyatakan penggunaannya** di laporan dan
+   tetap bertanggung jawab atas isi tugas.
+3. Data pribadi nyata (nama siswa, NISN, dsb.) **tidak boleh** dipakai
+   tanpa izin dan anonimisasi. Untuk latihan gunakan dataset sintetis.
 
 ---
 
-*Versi 0.1 — disusun sebagai kerangka. Mohon disunting sebelum dipakai
-di kelas.*
+*Versi 0.2 — 3 pertemuan ringkas. Mohon disunting sebelum dipakai.*
