@@ -1,0 +1,301 @@
+id_madrasah,nama,jenjang,status,provinsi,daerah,akreditasi,jumlah_siswa,jumlah_guru,rasio_siswa_guru,persen_guru_sertifikasi,akses_internet_mbps,perpustakaan,lab_komputer,rata_nilai_pai
+MDR00001,MMI DKI 0001,MI,Swasta,DKI Jakarta,Perkotaan,C,154,12,12.83,36.5,53.1,1,0,76.9
+MDR00002,MMI Lampung 0002,MI,Negeri,Lampung,Pedesaan,A,297,19,15.63,75.2,4.0,1,0,78.8
+MDR00003,MMA NTB 0003,MA,Swasta,NTB,Pedesaan,A,151,8,18.88,64.4,12.1,1,1,74.1
+MDR00004,MMTs Sulawesi 0004,MTs,Swasta,Sulawesi Selatan,Perkotaan,B,276,19,14.53,62.3,51.6,1,0,72.7
+MDR00005,MMI DI 0005,MI,Swasta,DI Yogyakarta,Pedesaan,B,241,19,12.68,37.9,12.6,1,1,70.8
+MDR00006,MMTs Aceh 0006,MTs,Swasta,Aceh,Perkotaan,Belum Terakreditasi,294,14,21.0,14.9,18.1,0,1,62.1
+MDR00007,MMI Sumatera 0007,MI,Swasta,Sumatera Utara,Perkotaan,B,243,12,20.25,37.2,25.4,0,0,75.8
+MDR00008,MMA Sumatera 0008,MA,Swasta,Sumatera Utara,Pedesaan,Belum Terakreditasi,206,12,17.17,36.2,6.9,0,0,67.8
+MDR00009,MMI Sumatera 0009,MI,Swasta,Sumatera Barat,Pedesaan,A,134,6,22.33,67.6,19.9,1,1,77.4
+MDR00010,MMI Kalimantan 0010,MI,Swasta,Kalimantan Selatan,Pedesaan,B,164,9,18.22,45.1,2.5,1,1,65.4
+MDR00011,MMI Kalimantan 0011,MI,Swasta,Kalimantan Selatan,Perkotaan,C,129,6,21.5,28.2,68.0,0,0,72.2
+MDR00012,MMTs Riau 0012,MTs,Swasta,Riau,Pedesaan,C,366,19,19.26,38.4,10.8,1,0,67.1
+MDR00013,MMTs Banten 0013,MTs,Swasta,Banten,Perkotaan,B,235,16,14.69,30.8,76.8,1,0,78.8
+MDR00014,MMI NTB 0014,MI,Swasta,NTB,Perkotaan,Belum Terakreditasi,143,7,20.43,23.0,39.6,1,1,61.0
+MDR00015,MMI Jawa 0015,MI,Swasta,Jawa Tengah,Perkotaan,A,265,12,22.08,52.7,24.6,1,0,76.7
+MDR00016,MMI Bali 0016,MI,Swasta,Bali,Pedesaan,B,141,7,20.14,30.8,18.9,1,0,71.8
+MDR00017,MMI Jawa 0017,MI,Swasta,Jawa Timur,Pedesaan,A,258,13,19.85,54.2,6.8,1,1,74.7
+MDR00018,MMI Banten 0018,MI,Swasta,Banten,3T,C,107,10,10.7,47.4,4.8,1,0,65.5
+MDR00019,MMI Jambi 0019,MI,Swasta,Jambi,Perkotaan,A,187,12,15.58,62.6,14.5,1,1,82.5
+MDR00020,MMI Sumatera 0020,MI,Negeri,Sumatera Selatan,Pedesaan,A,358,17,21.06,77.9,13.2,1,1,82.9
+MDR00021,MMI Jawa 0021,MI,Negeri,Jawa Tengah,3T,B,88,8,11.0,59.5,2.4,1,0,75.0
+MDR00022,MMA Sumatera 0022,MA,Swasta,Sumatera Selatan,3T,A,96,7,13.71,62.6,1.9,1,1,71.1
+MDR00023,MMTs NTB 0023,MTs,Swasta,NTB,3T,B,102,10,10.2,56.8,0.0,1,0,59.2
+MDR00024,MMI Sulawesi 0024,MI,Swasta,Sulawesi Selatan,Perkotaan,B,185,10,18.5,45.4,33.9,1,1,81.4
+MDR00025,MMA Kalimantan 0025,MA,Swasta,Kalimantan Selatan,Pedesaan,B,211,10,21.1,53.0,13.1,1,0,72.6
+MDR00026,MMI Sulawesi 0026,MI,Swasta,Sulawesi Selatan,Perkotaan,A,187,9,20.78,61.8,47.1,1,0,80.4
+MDR00027,MMI Jambi 0027,MI,Negeri,Jambi,Pedesaan,B,263,18,14.61,68.8,13.6,1,1,80.4
+MDR00028,MMI Sulawesi 0028,MI,Swasta,Sulawesi Selatan,3T,A,60,5,12.0,45.3,3.1,1,1,81.0
+MDR00029,MMI NTB 0029,MI,Swasta,NTB,Pedesaan,A,159,9,17.67,69.1,2.8,1,1,72.2
+MDR00030,MMTs Sumatera 0030,MTs,Swasta,Sumatera Utara,Pedesaan,A,297,20,14.85,61.6,14.7,1,1,76.3
+MDR00031,MMI Jawa 0031,MI,Negeri,Jawa Timur,Perkotaan,A,198,14,14.14,91.9,56.2,1,1,88.5
+MDR00032,MMI Jawa 0032,MI,Swasta,Jawa Tengah,3T,A,78,6,13.0,56.3,4.3,1,0,72.9
+MDR00033,MMTs Banten 0033,MTs,Swasta,Banten,Pedesaan,B,312,15,20.8,55.7,18.9,1,1,71.0
+MDR00034,MMI NTB 0034,MI,Swasta,NTB,Perkotaan,C,265,21,12.62,30.9,39.8,0,0,73.5
+MDR00035,MMA Sulawesi 0035,MA,Swasta,Sulawesi Selatan,Perkotaan,C,302,16,18.88,55.5,18.5,1,0,75.6
+MDR00036,MMI Jawa 0036,MI,Swasta,Jawa Barat,Pedesaan,C,149,8,18.62,23.3,3.4,0,1,71.1
+MDR00037,MMI Lampung 0037,MI,Swasta,Lampung,Pedesaan,Belum Terakreditasi,173,12,14.42,31.6,12.2,0,0,58.6
+MDR00038,MMTs Sumatera 0038,MTs,Swasta,Sumatera Utara,Pedesaan,B,207,11,18.82,47.1,5.2,1,1,77.2
+MDR00039,MMTs Banten 0039,MTs,Swasta,Banten,Perkotaan,B,312,14,22.29,40.4,79.2,1,0,80.4
+MDR00040,MMI Banten 0040,MI,Swasta,Banten,3T,C,111,10,11.1,42.8,0.8,1,0,58.5
+MDR00041,MMI Banten 0041,MI,Swasta,Banten,Pedesaan,C,217,11,19.73,42.5,19.5,0,0,65.8
+MDR00042,MMTs Sumatera 0042,MTs,Swasta,Sumatera Selatan,Perkotaan,C,211,16,13.19,31.3,10.7,1,0,69.8
+MDR00043,MMA NTB 0043,MA,Swasta,NTB,Pedesaan,B,109,6,18.17,54.2,2.2,1,0,74.1
+MDR00044,MMTs Jawa 0044,MTs,Negeri,Jawa Tengah,Perkotaan,B,542,41,13.22,64.8,77.8,1,1,76.5
+MDR00045,MMTs Jawa 0045,MTs,Swasta,Jawa Timur,Perkotaan,B,329,18,18.28,59.7,73.5,1,0,73.1
+MDR00046,MMI Jawa 0046,MI,Swasta,Jawa Tengah,Pedesaan,C,139,9,15.44,41.5,12.4,1,0,65.0
+MDR00047,MMI Sulawesi 0047,MI,Swasta,Sulawesi Selatan,Perkotaan,C,198,12,16.5,43.3,15.5,0,0,70.1
+MDR00048,MMA Jambi 0048,MA,Swasta,Jambi,Perkotaan,B,219,10,21.9,26.9,63.5,1,0,69.7
+MDR00049,MMI Sumatera 0049,MI,Swasta,Sumatera Selatan,Perkotaan,Belum Terakreditasi,188,10,18.8,24.7,29.9,1,0,68.0
+MDR00050,MMA Jawa 0050,MA,Swasta,Jawa Barat,Perkotaan,B,302,17,17.76,47.6,33.8,1,0,70.4
+MDR00051,MMI Sulawesi 0051,MI,Swasta,Sulawesi Selatan,Pedesaan,C,147,10,14.7,31.6,8.7,0,0,69.5
+MDR00052,MMI Jawa 0052,MI,Negeri,Jawa Timur,Pedesaan,C,248,20,12.4,63.7,2.4,1,0,80.4
+MDR00053,MMTs Sumatera 0053,MTs,Negeri,Sumatera Barat,Pedesaan,A,272,22,12.36,76.2,7.9,1,1,86.0
+MDR00054,MMTs Jambi 0054,MTs,Negeri,Jambi,Pedesaan,Belum Terakreditasi,496,41,12.1,45.8,13.8,1,0,70.1
+MDR00055,MMI Jawa 0055,MI,Negeri,Jawa Barat,3T,A,152,15,10.13,68.6,2.1,1,1,77.5
+MDR00056,MMTs Bali 0056,MTs,Swasta,Bali,Pedesaan,A,346,22,15.73,75.0,14.4,0,0,79.3
+MDR00057,MMI Banten 0057,MI,Swasta,Banten,Pedesaan,B,99,5,19.8,35.6,14.7,0,0,78.5
+MDR00058,MMI Riau 0058,MI,Swasta,Riau,Perkotaan,C,145,8,18.12,24.5,40.0,1,1,74.2
+MDR00059,MMTs DI 0059,MTs,Swasta,DI Yogyakarta,3T,B,99,12,8.25,45.0,1.7,1,0,70.7
+MDR00060,MMTs Bali 0060,MTs,Swasta,Bali,Pedesaan,C,260,16,16.25,36.2,15.7,0,0,59.6
+MDR00061,MMI Banten 0061,MI,Swasta,Banten,Pedesaan,B,185,12,15.42,51.1,11.2,1,1,70.3
+MDR00062,MMTs Jawa 0062,MTs,Swasta,Jawa Timur,Pedesaan,B,205,14,14.64,43.1,15.6,1,1,73.7
+MDR00063,MMTs NTB 0063,MTs,Swasta,NTB,Perkotaan,A,222,11,20.18,55.8,65.7,1,1,79.3
+MDR00064,MMTs Riau 0064,MTs,Swasta,Riau,Perkotaan,C,200,11,18.18,46.1,32.4,1,0,73.2
+MDR00065,MMI Banten 0065,MI,Swasta,Banten,Pedesaan,B,147,11,13.36,49.1,2.2,1,0,72.4
+MDR00066,MMI NTB 0066,MI,Swasta,NTB,3T,C,41,4,10.25,37.5,4.1,1,0,70.0
+MDR00067,MMI DI 0067,MI,Negeri,DI Yogyakarta,Perkotaan,C,175,10,17.5,65.9,52.8,1,1,76.9
+MDR00068,MMA Jawa 0068,MA,Swasta,Jawa Tengah,Perkotaan,B,275,20,13.75,23.7,41.8,1,1,75.1
+MDR00069,MMI Jawa 0069,MI,Swasta,Jawa Tengah,3T,Belum Terakreditasi,126,10,12.6,32.8,2.1,0,0,71.0
+MDR00070,MMTs DKI 0070,MTs,Swasta,DKI Jakarta,3T,C,130,11,11.82,43.5,3.8,0,1,68.0
+MDR00071,MMTs Sumatera 0071,MTs,Swasta,Sumatera Utara,Pedesaan,B,142,9,15.78,40.2,15.6,1,1,63.9
+MDR00072,MMI Sulawesi 0072,MI,Swasta,Sulawesi Selatan,Perkotaan,B,181,12,15.08,50.2,46.8,1,1,79.4
+MDR00073,MMI Bali 0073,MI,Negeri,Bali,Pedesaan,C,136,8,17.0,61.9,18.2,0,1,71.2
+MDR00074,MMI Riau 0074,MI,Swasta,Riau,Pedesaan,A,151,7,21.57,47.7,16.5,1,0,77.8
+MDR00075,MMI Jawa 0075,MI,Swasta,Jawa Tengah,Perkotaan,B,173,9,19.22,39.7,33.8,0,0,77.1
+MDR00076,MMA NTB 0076,MA,Swasta,NTB,3T,B,93,10,9.3,38.2,2.9,1,0,61.3
+MDR00077,MMTs Jawa 0077,MTs,Swasta,Jawa Timur,Pedesaan,Belum Terakreditasi,295,19,15.53,22.7,6.3,0,0,57.1
+MDR00078,MMTs Aceh 0078,MTs,Swasta,Aceh,3T,B,157,12,13.08,42.0,3.8,1,0,73.1
+MDR00079,MMTs Banten 0079,MTs,Swasta,Banten,Pedesaan,C,274,15,18.27,34.9,11.2,1,0,64.5
+MDR00080,MMI Jambi 0080,MI,Swasta,Jambi,Perkotaan,C,192,12,16.0,29.2,77.5,1,0,74.1
+MDR00081,MMI DI 0081,MI,Swasta,DI Yogyakarta,Pedesaan,B,279,18,15.5,51.3,18.4,1,0,73.0
+MDR00082,MMTs DI 0082,MTs,Swasta,DI Yogyakarta,Perkotaan,B,235,12,19.58,37.3,78.8,1,0,78.6
+MDR00083,MMI Banten 0083,MI,Swasta,Banten,Perkotaan,Belum Terakreditasi,184,15,12.27,30.5,14.8,1,0,63.8
+MDR00084,MMI Sumatera 0084,MI,Swasta,Sumatera Selatan,3T,A,87,10,8.7,53.4,2.1,1,1,72.6
+MDR00085,MMI Jambi 0085,MI,Negeri,Jambi,Pedesaan,B,304,17,17.88,60.4,4.7,1,0,69.6
+MDR00086,MMTs Jawa 0086,MTs,Swasta,Jawa Barat,Perkotaan,C,357,27,13.22,27.5,49.8,1,0,70.0
+MDR00087,MMI Sumatera 0087,MI,Swasta,Sumatera Utara,Pedesaan,B,48,4,12.0,44.4,6.8,0,0,74.3
+MDR00088,MMA Banten 0088,MA,Swasta,Banten,3T,B,110,12,9.17,55.2,4.2,1,1,75.9
+MDR00089,MMI Sulawesi 0089,MI,Swasta,Sulawesi Selatan,Perkotaan,C,165,11,15.0,25.6,71.1,0,0,73.4
+MDR00090,MMI Lampung 0090,MI,Swasta,Lampung,Pedesaan,B,198,15,13.2,46.3,19.1,0,0,76.3
+MDR00091,MMI Sumatera 0091,MI,Swasta,Sumatera Selatan,Pedesaan,C,260,12,21.67,23.5,16.4,0,0,69.2
+MDR00092,MMA NTB 0092,MA,Swasta,NTB,Perkotaan,C,80,5,16.0,33.9,45.0,0,0,72.2
+MDR00093,MMA Sulawesi 0093,MA,Swasta,Sulawesi Selatan,Perkotaan,B,192,10,19.2,47.2,24.7,1,0,69.8
+MDR00094,MMTs Jawa 0094,MTs,Swasta,Jawa Tengah,Perkotaan,C,319,20,15.95,29.6,74.7,1,0,67.6
+MDR00095,MMTs Aceh 0095,MTs,Swasta,Aceh,Pedesaan,B,215,13,16.54,45.0,8.0,1,1,71.4
+MDR00096,MMA DKI 0096,MA,Swasta,DKI Jakarta,Pedesaan,B,262,15,17.47,31.5,12.6,1,0,84.5
+MDR00097,MMI Banten 0097,MI,Swasta,Banten,Pedesaan,C,187,11,17.0,41.3,12.4,1,0,73.6
+MDR00098,MMTs Jambi 0098,MTs,Swasta,Jambi,Perkotaan,B,250,13,19.23,32.6,43.8,1,0,75.2
+MDR00099,MMTs Jambi 0099,MTs,Swasta,Jambi,Pedesaan,A,149,9,16.56,52.7,6.1,1,1,73.8
+MDR00100,MMTs NTB 0100,MTs,Swasta,NTB,3T,B,166,16,10.38,54.5,1.9,1,0,70.8
+MDR00101,MMTs DI 0101,MTs,Swasta,DI Yogyakarta,Pedesaan,B,256,18,14.22,54.8,6.4,1,1,76.2
+MDR00102,MMI Sulawesi 0102,MI,Swasta,Sulawesi Selatan,Perkotaan,B,246,12,20.5,39.4,48.0,1,1,74.3
+MDR00103,MMI Lampung 0103,MI,Negeri,Lampung,Perkotaan,A,273,18,15.17,89.9,70.6,1,0,91.3
+MDR00104,MMI Jambi 0104,MI,Negeri,Jambi,Perkotaan,A,219,18,12.17,74.2,47.3,1,1,78.0
+MDR00105,MMI Riau 0105,MI,Negeri,Riau,Perkotaan,B,305,21,14.52,70.7,23.7,1,0,78.6
+MDR00106,MMI Jawa 0106,MI,Swasta,Jawa Timur,Perkotaan,B,78,6,13.0,33.6,40.9,1,1,72.1
+MDR00107,MMI Aceh 0107,MI,Swasta,Aceh,Perkotaan,C,71,4,17.75,29.4,64.4,1,1,76.5
+MDR00108,MMTs Jawa 0108,MTs,Swasta,Jawa Tengah,Pedesaan,C,317,16,19.81,28.1,4.3,1,0,62.0
+MDR00109,MMI Jawa 0109,MI,Swasta,Jawa Timur,Perkotaan,C,274,19,14.42,29.3,43.2,0,0,69.5
+MDR00110,MMA Jawa 0110,MA,Swasta,Jawa Timur,Perkotaan,B,182,11,16.55,42.1,17.7,1,1,70.3
+MDR00111,MMI Sumatera 0111,MI,Swasta,Sumatera Utara,Pedesaan,B,237,16,14.81,30.6,6.6,1,0,68.0
+MDR00112,MMI Banten 0112,MI,Swasta,Banten,Perkotaan,A,105,6,17.5,76.5,57.1,1,0,83.9
+MDR00113,MMTs Jambi 0113,MTs,Negeri,Jambi,Pedesaan,B,458,25,18.32,70.8,11.2,1,1,78.2
+MDR00114,MMTs DKI 0114,MTs,Swasta,DKI Jakarta,Pedesaan,B,109,5,21.8,38.2,18.3,1,1,71.7
+MDR00115,MMI Riau 0115,MI,Swasta,Riau,Perkotaan,B,110,7,15.71,55.1,34.4,1,1,71.3
+MDR00116,MMA Sumatera 0116,MA,Negeri,Sumatera Selatan,Perkotaan,B,333,18,18.5,71.1,63.3,1,0,84.9
+MDR00117,MMI Aceh 0117,MI,Swasta,Aceh,Perkotaan,C,253,13,19.46,30.7,32.1,0,0,75.3
+MDR00118,MMTs Jawa 0118,MTs,Swasta,Jawa Tengah,Pedesaan,B,240,17,14.12,44.8,8.2,1,1,67.8
+MDR00119,MMI Kalimantan 0119,MI,Swasta,Kalimantan Selatan,Perkotaan,B,140,9,15.56,49.7,70.6,1,0,77.9
+MDR00120,MMI Sulawesi 0120,MI,Negeri,Sulawesi Selatan,3T,C,107,13,8.23,58.6,1.9,1,1,64.9
+MDR00121,MMTs Sumatera 0121,MTs,Swasta,Sumatera Selatan,Pedesaan,B,382,32,11.94,36.1,2.5,1,0,62.3
+MDR00122,MMI Kalimantan 0122,MI,Swasta,Kalimantan Selatan,Perkotaan,A,30,4,7.5,61.9,44.1,0,1,81.7
+MDR00123,MMI Kalimantan 0123,MI,Negeri,Kalimantan Selatan,Pedesaan,B,217,11,19.73,66.0,12.5,1,1,78.2
+MDR00124,MMI Riau 0124,MI,Swasta,Riau,Pedesaan,Belum Terakreditasi,225,13,17.31,22.5,9.2,1,0,66.3
+MDR00125,MMTs Aceh 0125,MTs,Swasta,Aceh,Perkotaan,C,246,12,20.5,25.7,62.8,1,1,73.6
+MDR00126,MMI Kalimantan 0126,MI,Negeri,Kalimantan Selatan,Pedesaan,B,240,18,13.33,65.7,16.6,1,0,80.5
+MDR00127,MMI Sumatera 0127,MI,Swasta,Sumatera Selatan,Pedesaan,A,181,11,16.45,46.1,9.0,1,1,77.1
+MDR00128,MMI Jawa 0128,MI,Swasta,Jawa Tengah,Perkotaan,B,235,16,14.69,45.9,61.8,1,1,71.1
+MDR00129,MMTs DI 0129,MTs,Swasta,DI Yogyakarta,Perkotaan,C,223,12,18.58,42.6,18.4,0,0,68.8
+MDR00130,MMI DI 0130,MI,Swasta,DI Yogyakarta,Perkotaan,C,184,10,18.4,43.7,41.0,1,0,70.9
+MDR00131,MMI Jawa 0131,MI,Swasta,Jawa Timur,Pedesaan,A,241,16,15.06,52.6,15.7,1,1,83.3
+MDR00132,MMI Jawa 0132,MI,Negeri,Jawa Barat,Pedesaan,B,347,26,13.35,71.3,2.3,0,1,74.4
+MDR00133,MMTs Jambi 0133,MTs,Negeri,Jambi,3T,Belum Terakreditasi,246,30,8.2,48.9,0.3,0,0,61.9
+MDR00134,MMTs Sumatera 0134,MTs,Negeri,Sumatera Utara,Perkotaan,A,315,15,21.0,76.4,34.7,1,1,84.3
+MDR00135,MMTs Sumatera 0135,MTs,Swasta,Sumatera Utara,Pedesaan,C,418,28,14.93,41.1,16.3,1,0,62.4
+MDR00136,MMTs Bali 0136,MTs,Negeri,Bali,Pedesaan,C,292,14,20.86,56.1,16.9,0,1,69.1
+MDR00137,MMI Sumatera 0137,MI,Swasta,Sumatera Utara,Pedesaan,C,229,12,19.08,22.2,16.0,1,1,63.4
+MDR00138,MMI DKI 0138,MI,Swasta,DKI Jakarta,Pedesaan,B,117,5,23.4,30.6,9.7,1,0,83.5
+MDR00139,MMI Sumatera 0139,MI,Swasta,Sumatera Selatan,3T,B,96,11,8.73,44.3,3.4,1,0,64.0
+MDR00140,MMI Banten 0140,MI,Swasta,Banten,3T,B,51,4,12.75,49.5,4.4,1,1,69.1
+MDR00141,MMTs Jawa 0141,MTs,Swasta,Jawa Timur,Pedesaan,C,292,14,20.86,22.3,6.6,0,0,62.8
+MDR00142,MMTs Aceh 0142,MTs,Negeri,Aceh,Perkotaan,B,279,23,12.13,63.3,57.4,1,0,77.8
+MDR00143,MMTs Aceh 0143,MTs,Negeri,Aceh,Pedesaan,C,381,18,21.17,45.2,5.1,0,0,77.2
+MDR00144,MMTs Jawa 0144,MTs,Negeri,Jawa Timur,Pedesaan,B,344,28,12.29,61.4,19.0,1,0,77.3
+MDR00145,MMTs Lampung 0145,MTs,Swasta,Lampung,Pedesaan,A,277,17,16.29,56.1,11.2,0,1,82.6
+MDR00146,MMI Riau 0146,MI,Swasta,Riau,Perkotaan,B,150,11,13.64,49.9,32.3,1,1,74.5
+MDR00147,MMA DI 0147,MA,Negeri,DI Yogyakarta,Perkotaan,C,374,23,16.26,50.6,48.6,0,0,71.3
+MDR00148,MMTs Sulawesi 0148,MTs,Swasta,Sulawesi Selatan,Perkotaan,C,330,16,20.62,28.3,43.7,1,0,64.7
+MDR00149,MMA Banten 0149,MA,Swasta,Banten,Perkotaan,Belum Terakreditasi,124,6,20.67,26.9,67.1,1,0,73.0
+MDR00150,MMI Jawa 0150,MI,Negeri,Jawa Barat,Perkotaan,Belum Terakreditasi,340,19,17.89,30.9,15.0,1,1,70.9
+MDR00151,MMTs Lampung 0151,MTs,Swasta,Lampung,Pedesaan,B,424,29,14.62,52.7,6.1,1,1,70.7
+MDR00152,MMTs DKI 0152,MTs,Swasta,DKI Jakarta,Perkotaan,A,286,23,12.43,59.0,49.2,1,0,79.3
+MDR00153,MMI Jawa 0153,MI,Swasta,Jawa Timur,Perkotaan,B,67,4,16.75,46.4,41.3,0,0,83.9
+MDR00154,MMA Bali 0154,MA,Swasta,Bali,Pedesaan,A,254,14,18.14,64.4,19.2,1,1,80.8
+MDR00155,MMI NTB 0155,MI,Swasta,NTB,Pedesaan,C,228,13,17.54,22.9,16.2,1,0,69.5
+MDR00156,MMA Jawa 0156,MA,Swasta,Jawa Tengah,Pedesaan,B,117,6,19.5,46.4,2.1,1,0,78.8
+MDR00157,MMA Sulawesi 0157,MA,Swasta,Sulawesi Selatan,Pedesaan,A,161,9,17.89,53.1,12.7,1,1,75.2
+MDR00158,MMTs Sumatera 0158,MTs,Swasta,Sumatera Utara,3T,B,108,8,13.5,49.3,3.6,1,0,65.4
+MDR00159,MMA Lampung 0159,MA,Negeri,Lampung,Perkotaan,A,327,17,19.24,83.4,66.6,1,1,83.4
+MDR00160,MMTs Sulawesi 0160,MTs,Swasta,Sulawesi Selatan,3T,C,40,4,10.0,39.5,2.1,0,1,73.1
+MDR00161,MMTs Sumatera 0161,MTs,Swasta,Sumatera Utara,Perkotaan,B,278,17,16.35,47.4,19.8,1,1,67.1
+MDR00162,MMTs Jawa 0162,MTs,Swasta,Jawa Timur,Perkotaan,C,255,17,15.0,40.0,29.0,1,1,63.7
+MDR00163,MMI Jambi 0163,MI,Swasta,Jambi,3T,C,73,6,12.17,18.8,4.3,1,0,67.4
+MDR00164,MMTs Jawa 0164,MTs,Swasta,Jawa Timur,Perkotaan,C,204,13,15.69,25.4,68.3,1,0,72.7
+MDR00165,MMI Jambi 0165,MI,Swasta,Jambi,Perkotaan,B,148,10,14.8,50.3,44.6,1,1,79.7
+MDR00166,MMI Lampung 0166,MI,Negeri,Lampung,Perkotaan,C,240,16,15.0,43.1,61.3,1,0,74.2
+MDR00167,MMI Sumatera 0167,MI,Swasta,Sumatera Barat,Perkotaan,C,192,11,17.45,47.7,12.4,1,0,64.0
+MDR00168,MMA Sumatera 0168,MA,Swasta,Sumatera Utara,Perkotaan,A,291,17,17.12,49.0,79.7,1,1,78.4
+MDR00169,MMI Bali 0169,MI,Negeri,Bali,Perkotaan,C,358,18,19.89,58.0,64.9,0,0,72.6
+MDR00170,MMI Aceh 0170,MI,Swasta,Aceh,Pedesaan,C,201,15,13.4,32.4,16.6,0,0,66.0
+MDR00171,MMI Jawa 0171,MI,Swasta,Jawa Timur,Pedesaan,A,247,12,20.58,53.1,17.5,1,1,79.0
+MDR00172,MMI Bali 0172,MI,Swasta,Bali,Pedesaan,B,189,9,21.0,54.0,2.2,1,0,65.8
+MDR00173,MMTs Jawa 0173,MTs,Swasta,Jawa Tengah,Perkotaan,C,191,12,15.92,40.2,66.3,1,0,78.8
+MDR00174,MMTs Jawa 0174,MTs,Negeri,Jawa Barat,Perkotaan,C,316,21,15.05,61.7,68.6,1,0,78.7
+MDR00175,MMTs Jawa 0175,MTs,Negeri,Jawa Tengah,Perkotaan,B,435,26,16.73,58.9,19.2,1,1,73.8
+MDR00176,MMTs Sulawesi 0176,MTs,Swasta,Sulawesi Selatan,Pedesaan,Belum Terakreditasi,183,9,20.33,24.0,5.4,0,0,66.2
+MDR00177,MMTs Sumatera 0177,MTs,Negeri,Sumatera Utara,Perkotaan,A,458,21,21.81,70.1,49.7,1,1,80.3
+MDR00178,MMA Sumatera 0178,MA,Swasta,Sumatera Selatan,Perkotaan,B,206,14,14.71,54.0,11.7,1,1,72.1
+MDR00179,MMI Sulawesi 0179,MI,Swasta,Sulawesi Selatan,Perkotaan,C,234,19,12.32,35.4,59.7,0,0,72.2
+MDR00180,MMI DKI 0180,MI,Negeri,DKI Jakarta,Pedesaan,B,278,19,14.63,58.3,4.1,1,1,79.5
+MDR00181,MMI Bali 0181,MI,Swasta,Bali,Perkotaan,B,150,10,15.0,32.4,56.7,1,1,77.2
+MDR00182,MMA Sumatera 0182,MA,Negeri,Sumatera Barat,Perkotaan,C,197,15,13.13,62.3,54.9,1,0,80.4
+MDR00183,MMI NTB 0183,MI,Swasta,NTB,Perkotaan,B,30,4,7.5,45.8,39.7,1,0,73.9
+MDR00184,MMI Sumatera 0184,MI,Swasta,Sumatera Utara,Pedesaan,B,170,8,21.25,44.0,11.9,1,1,73.4
+MDR00185,MMI Bali 0185,MI,Swasta,Bali,Perkotaan,C,180,13,13.85,31.5,31.9,1,0,72.2
+MDR00186,MMI Jawa 0186,MI,Swasta,Jawa Tengah,Perkotaan,B,267,14,19.07,55.7,49.8,1,0,76.6
+MDR00187,MMTs Kalimantan 0187,MTs,Swasta,Kalimantan Selatan,Perkotaan,B,95,4,23.75,49.9,54.3,1,0,73.6
+MDR00188,MMTs Sumatera 0188,MTs,Swasta,Sumatera Barat,3T,B,138,12,11.5,40.0,4.5,1,0,62.3
+MDR00189,MMI Sumatera 0189,MI,Negeri,Sumatera Barat,Pedesaan,C,252,19,13.26,57.9,16.0,1,0,66.0
+MDR00190,MMTs NTB 0190,MTs,Swasta,NTB,Pedesaan,B,340,26,13.08,50.4,14.8,1,0,69.6
+MDR00191,MMI Lampung 0191,MI,Swasta,Lampung,Pedesaan,C,126,7,18.0,42.0,9.4,1,1,65.2
+MDR00192,MMA Banten 0192,MA,Negeri,Banten,Pedesaan,C,378,21,18.0,64.2,4.5,1,0,70.9
+MDR00193,MMA Riau 0193,MA,Swasta,Riau,Pedesaan,C,242,18,13.44,33.8,3.1,1,0,70.5
+MDR00194,MMA DI 0194,MA,Negeri,DI Yogyakarta,Pedesaan,B,373,27,13.81,74.3,12.1,1,1,77.8
+MDR00195,MMI Sulawesi 0195,MI,Swasta,Sulawesi Selatan,Pedesaan,Belum Terakreditasi,236,11,21.45,28.6,8.7,0,0,64.7
+MDR00196,MMTs Sumatera 0196,MTs,Swasta,Sumatera Utara,Perkotaan,B,173,8,21.62,46.2,48.9,1,0,75.5
+MDR00197,MMA Bali 0197,MA,Negeri,Bali,Perkotaan,B,121,10,12.1,58.0,39.8,1,1,78.0
+MDR00198,MMTs Jawa 0198,MTs,Negeri,Jawa Tengah,Perkotaan,Belum Terakreditasi,229,13,17.62,42.4,62.0,1,0,70.8
+MDR00199,MMI Aceh 0199,MI,Swasta,Aceh,Pedesaan,A,259,19,13.63,63.1,2.6,1,0,75.0
+MDR00200,MMI Lampung 0200,MI,Swasta,Lampung,Perkotaan,B,216,16,13.5,30.9,79.1,1,0,72.5
+MDR00201,MMI Kalimantan 0201,MI,Swasta,Kalimantan Selatan,Pedesaan,B,235,17,13.82,40.4,10.8,1,0,75.6
+MDR00202,MMTs NTB 0202,MTs,Swasta,NTB,Pedesaan,A,182,9,20.22,65.9,11.9,1,0,81.4
+MDR00203,MMI Jawa 0203,MI,Swasta,Jawa Barat,Pedesaan,C,124,10,12.4,28.5,13.1,0,0,56.3
+MDR00204,MMA Lampung 0204,MA,Swasta,Lampung,Perkotaan,B,111,6,18.5,54.5,50.8,1,1,75.2
+MDR00205,MMI DI 0205,MI,Negeri,DI Yogyakarta,Perkotaan,B,221,12,18.42,65.1,68.4,1,0,88.0
+MDR00206,MMI Jambi 0206,MI,Swasta,Jambi,Perkotaan,A,242,12,20.17,53.0,10.2,0,1,78.3
+MDR00207,MMI Sulawesi 0207,MI,Swasta,Sulawesi Selatan,Perkotaan,A,91,5,18.2,61.3,56.5,1,0,79.9
+MDR00208,MMI Riau 0208,MI,Swasta,Riau,3T,A,72,6,12.0,51.0,2.1,0,1,77.8
+MDR00209,MMA Sumatera 0209,MA,Swasta,Sumatera Selatan,Pedesaan,B,107,8,13.38,54.5,2.0,0,1,75.0
+MDR00210,MMI Aceh 0210,MI,Swasta,Aceh,Pedesaan,Belum Terakreditasi,187,9,20.78,17.6,9.1,0,0,60.3
+MDR00211,MMI Aceh 0211,MI,Negeri,Aceh,Perkotaan,C,235,13,18.08,59.8,15.8,1,0,67.4
+MDR00212,MMI DI 0212,MI,Swasta,DI Yogyakarta,Pedesaan,A,198,12,16.5,57.7,15.0,1,0,79.7
+MDR00213,MMTs Sumatera 0213,MTs,Negeri,Sumatera Barat,3T,A,259,29,8.93,79.3,2.2,1,0,74.2
+MDR00214,MMI Kalimantan 0214,MI,Swasta,Kalimantan Selatan,Pedesaan,C,199,15,13.27,27.7,13.3,0,1,62.3
+MDR00215,MMI Jambi 0215,MI,Swasta,Jambi,Pedesaan,C,235,17,13.82,40.0,11.7,1,0,71.5
+MDR00216,MMI Sulawesi 0216,MI,Swasta,Sulawesi Selatan,Pedesaan,B,54,4,13.5,49.6,7.1,1,1,76.2
+MDR00217,MMI Banten 0217,MI,Swasta,Banten,Perkotaan,Belum Terakreditasi,186,15,12.4,25.0,51.3,0,1,69.2
+MDR00218,MMTs Aceh 0218,MTs,Swasta,Aceh,Pedesaan,A,377,19,19.84,52.4,5.7,1,1,75.3
+MDR00219,MMA Sulawesi 0219,MA,Negeri,Sulawesi Selatan,Perkotaan,C,258,13,19.85,45.0,17.5,1,0,72.7
+MDR00220,MMI Banten 0220,MI,Swasta,Banten,Perkotaan,B,268,18,14.89,31.1,27.6,1,0,69.2
+MDR00221,MMTs Bali 0221,MTs,Swasta,Bali,Pedesaan,B,291,19,15.32,53.2,19.0,1,1,72.9
+MDR00222,MMTs Bali 0222,MTs,Swasta,Bali,Pedesaan,B,260,14,18.57,34.9,15.6,1,1,78.2
+MDR00223,MMI Lampung 0223,MI,Swasta,Lampung,Perkotaan,C,164,9,18.22,43.8,50.1,0,0,68.1
+MDR00224,MMI DKI 0224,MI,Swasta,DKI Jakarta,Pedesaan,B,269,20,13.45,46.5,19.9,1,1,76.0
+MDR00225,MMI Aceh 0225,MI,Negeri,Aceh,Pedesaan,C,264,21,12.57,51.8,11.8,0,0,72.4
+MDR00226,MMA Bali 0226,MA,Swasta,Bali,Pedesaan,B,198,9,22.0,56.2,15.9,1,0,67.8
+MDR00227,MMTs Sumatera 0227,MTs,Swasta,Sumatera Barat,Perkotaan,B,254,12,21.17,42.1,58.7,1,0,68.4
+MDR00228,MMI Riau 0228,MI,Swasta,Riau,3T,Belum Terakreditasi,96,9,10.67,21.5,2.6,0,0,60.2
+MDR00229,MMTs Riau 0229,MTs,Swasta,Riau,Pedesaan,B,331,20,16.55,52.0,19.3,1,1,72.0
+MDR00230,MMI DI 0230,MI,Swasta,DI Yogyakarta,Perkotaan,B,145,7,20.71,43.0,23.6,1,1,76.9
+MDR00231,MMI DKI 0231,MI,Negeri,DKI Jakarta,Pedesaan,C,278,20,13.9,57.5,2.5,0,0,72.8
+MDR00232,MMI NTB 0232,MI,Swasta,NTB,Pedesaan,B,177,12,14.75,54.2,2.1,1,1,70.2
+MDR00233,MMI Jawa 0233,MI,Swasta,Jawa Barat,Pedesaan,C,154,7,22.0,42.5,4.1,1,0,69.4
+MDR00234,MMA Sulawesi 0234,MA,Swasta,Sulawesi Selatan,3T,B,69,5,13.8,47.7,2.4,1,0,68.5
+MDR00235,MMA Banten 0235,MA,Swasta,Banten,Perkotaan,B,204,12,17.0,14.8,26.4,1,1,75.1
+MDR00236,MMI Kalimantan 0236,MI,Swasta,Kalimantan Selatan,Perkotaan,B,108,6,18.0,47.5,20.0,0,1,69.9
+MDR00237,MMTs Jawa 0237,MTs,Swasta,Jawa Barat,Pedesaan,A,389,20,19.45,66.5,15.5,0,1,73.4
+MDR00238,MMI Sumatera 0238,MI,Negeri,Sumatera Barat,Perkotaan,B,363,23,15.78,67.6,56.6,0,0,81.2
+MDR00239,MMTs Jawa 0239,MTs,Swasta,Jawa Tengah,Pedesaan,A,166,10,16.6,66.3,3.9,1,0,68.5
+MDR00240,MMA NTB 0240,MA,Swasta,NTB,Pedesaan,B,66,4,16.5,42.3,15.1,1,1,74.2
+MDR00241,MMA Lampung 0241,MA,Swasta,Lampung,Pedesaan,B,201,11,18.27,46.1,3.4,1,0,68.2
+MDR00242,MMI Sulawesi 0242,MI,Swasta,Sulawesi Selatan,Perkotaan,C,132,11,12.0,28.3,18.3,1,0,71.5
+MDR00243,MMI Jawa 0243,MI,Negeri,Jawa Timur,Pedesaan,B,340,28,12.14,58.5,8.8,1,1,68.6
+MDR00244,MMI Sumatera 0244,MI,Swasta,Sumatera Utara,3T,C,140,15,9.33,36.2,3.6,0,0,65.7
+MDR00245,MMI Kalimantan 0245,MI,Swasta,Kalimantan Selatan,Pedesaan,C,182,13,14.0,36.9,17.7,0,0,67.3
+MDR00246,MMTs Bali 0246,MTs,Swasta,Bali,Perkotaan,B,323,18,17.94,57.5,72.9,1,0,79.1
+MDR00247,MMTs DI 0247,MTs,Swasta,DI Yogyakarta,Pedesaan,B,155,12,12.92,36.2,17.7,1,0,72.8
+MDR00248,MMI Sumatera 0248,MI,Swasta,Sumatera Utara,Perkotaan,B,209,14,14.93,47.9,57.9,1,0,77.7
+MDR00249,MMI Sulawesi 0249,MI,Swasta,Sulawesi Selatan,3T,C,66,6,11.0,33.9,0.5,1,1,66.2
+MDR00250,MMI Sumatera 0250,MI,Swasta,Sumatera Selatan,Pedesaan,C,120,6,20.0,38.3,12.6,1,0,63.2
+MDR00251,MMTs Sumatera 0251,MTs,Swasta,Sumatera Barat,3T,B,93,7,13.29,52.9,0.1,1,0,68.7
+MDR00252,MMA DI 0252,MA,Swasta,DI Yogyakarta,Pedesaan,C,135,8,16.88,35.3,16.5,0,0,62.4
+MDR00253,MMI Bali 0253,MI,Swasta,Bali,Pedesaan,B,144,8,18.0,55.6,10.4,1,1,70.3
+MDR00254,MMI Jawa 0254,MI,Swasta,Jawa Timur,Pedesaan,B,309,23,13.43,37.7,2.2,1,0,72.0
+MDR00255,MMI Sumatera 0255,MI,Swasta,Sumatera Barat,Perkotaan,A,168,10,16.8,67.0,68.0,1,1,83.1
+MDR00256,MMI DKI 0256,MI,Swasta,DKI Jakarta,Perkotaan,B,158,8,19.75,33.0,39.9,1,1,70.2
+MDR00257,MMI Jawa 0257,MI,Swasta,Jawa Barat,3T,A,104,8,13.0,60.2,4.1,1,0,75.6
+MDR00258,MMA Lampung 0258,MA,Swasta,Lampung,Pedesaan,B,193,9,21.44,31.9,7.9,1,1,63.3
+MDR00259,MMA Sumatera 0259,MA,Swasta,Sumatera Selatan,Perkotaan,B,285,14,20.36,38.6,34.2,1,0,79.4
+MDR00260,MMI Jambi 0260,MI,Swasta,Jambi,Pedesaan,B,93,5,18.6,45.7,5.4,1,1,67.3
+MDR00261,MMI Jambi 0261,MI,Swasta,Jambi,Pedesaan,B,209,17,12.29,49.6,15.1,1,1,74.7
+MDR00262,MMI Aceh 0262,MI,Negeri,Aceh,Perkotaan,B,249,12,20.75,62.9,79.9,1,0,77.6
+MDR00263,MMI Jawa 0263,MI,Swasta,Jawa Tengah,Perkotaan,C,127,6,21.17,33.5,76.2,0,1,67.8
+MDR00264,MMTs Lampung 0264,MTs,Swasta,Lampung,Perkotaan,A,368,19,19.37,64.4,71.0,1,1,77.1
+MDR00265,MMI Bali 0265,MI,Swasta,Bali,Pedesaan,B,79,4,19.75,52.9,9.0,1,0,67.4
+MDR00266,MMI Aceh 0266,MI,Swasta,Aceh,Pedesaan,A,215,10,21.5,76.6,2.8,1,0,78.3
+MDR00267,MMI DI 0267,MI,Swasta,DI Yogyakarta,Pedesaan,Belum Terakreditasi,214,10,21.4,26.3,14.2,0,0,62.6
+MDR00268,MMTs Kalimantan 0268,MTs,Swasta,Kalimantan Selatan,Pedesaan,Belum Terakreditasi,272,16,17.0,31.7,2.6,0,0,61.6
+MDR00269,MMI DKI 0269,MI,Swasta,DKI Jakarta,Perkotaan,C,213,11,19.36,26.8,66.2,1,1,69.6
+MDR00270,MMTs Kalimantan 0270,MTs,Swasta,Kalimantan Selatan,3T,Belum Terakreditasi,79,9,8.78,36.9,5.0,1,0,56.2
+MDR00271,MMTs Aceh 0271,MTs,Swasta,Aceh,Pedesaan,B,387,25,15.48,49.0,14.9,1,0,72.3
+MDR00272,MMTs Sumatera 0272,MTs,Negeri,Sumatera Barat,Pedesaan,B,394,23,17.13,61.9,8.0,1,0,71.5
+MDR00273,MMI Riau 0273,MI,Negeri,Riau,Pedesaan,Belum Terakreditasi,225,16,14.06,48.9,2.4,1,0,71.7
+MDR00274,MMI Bali 0274,MI,Swasta,Bali,Pedesaan,Belum Terakreditasi,211,11,19.18,26.1,10.1,1,0,60.9
+MDR00275,MMA DI 0275,MA,Swasta,DI Yogyakarta,Perkotaan,B,48,4,12.0,55.1,21.3,1,0,78.1
+MDR00276,MMI Riau 0276,MI,Negeri,Riau,Perkotaan,A,373,29,12.86,80.9,19.0,1,1,83.2
+MDR00277,MMI NTB 0277,MI,Swasta,NTB,3T,B,47,6,7.83,35.4,4.7,1,0,64.1
+MDR00278,MMI Lampung 0278,MI,Swasta,Lampung,3T,B,35,4,8.75,32.9,2.7,1,1,73.8
+MDR00279,MMI Aceh 0279,MI,Swasta,Aceh,Pedesaan,B,281,14,20.07,46.4,17.6,1,0,70.1
+MDR00280,MMTs Riau 0280,MTs,Swasta,Riau,3T,B,169,16,10.56,44.9,0.7,1,1,69.8
+MDR00281,MMI Sulawesi 0281,MI,Swasta,Sulawesi Selatan,Perkotaan,C,71,4,17.75,34.6,52.4,0,0,73.2
+MDR00282,MMTs Jawa 0282,MTs,Swasta,Jawa Timur,Perkotaan,B,336,19,17.68,37.6,21.8,1,1,72.0
+MDR00283,MMA Sumatera 0283,MA,Negeri,Sumatera Utara,Perkotaan,A,233,19,12.26,80.5,43.2,0,1,92.7
+MDR00284,MMI Sulawesi 0284,MI,Swasta,Sulawesi Selatan,Perkotaan,Belum Terakreditasi,224,14,16.0,33.1,10.8,1,0,57.5
+MDR00285,MMI NTB 0285,MI,Swasta,NTB,Pedesaan,B,90,7,12.86,45.0,5.3,1,1,68.0
+MDR00286,MMI NTB 0286,MI,Swasta,NTB,Pedesaan,C,354,25,14.16,19.1,14.3,0,1,63.1
+MDR00287,MMTs Sumatera 0287,MTs,Swasta,Sumatera Barat,Perkotaan,C,229,19,12.05,43.6,58.6,1,0,74.2
+MDR00288,MMI Sumatera 0288,MI,Swasta,Sumatera Barat,Pedesaan,B,137,9,15.22,42.0,11.1,1,1,69.0
+MDR00289,MMA DI 0289,MA,Swasta,DI Yogyakarta,Perkotaan,B,200,9,22.22,59.1,34.3,1,1,75.4
+MDR00290,MMI Kalimantan 0290,MI,Negeri,Kalimantan Selatan,Perkotaan,A,257,16,16.06,90.3,67.2,1,0,88.0
+MDR00291,MMI Jawa 0291,MI,Negeri,Jawa Barat,Perkotaan,B,278,19,14.63,65.2,33.4,1,1,73.9
+MDR00292,MMA Banten 0292,MA,Swasta,Banten,Perkotaan,B,122,7,17.43,37.0,19.7,1,0,70.3
+MDR00293,MMI Sumatera 0293,MI,Swasta,Sumatera Utara,Pedesaan,A,290,17,17.06,71.7,9.2,1,0,78.9
+MDR00294,MMTs Sumatera 0294,MTs,Swasta,Sumatera Barat,Pedesaan,C,275,17,16.18,20.4,7.1,1,0,65.5
+MDR00295,MMA Jawa 0295,MA,Swasta,Jawa Barat,Pedesaan,C,150,10,15.0,27.0,12.9,0,0,74.5
+MDR00296,MMA Bali 0296,MA,Swasta,Bali,3T,B,101,9,11.22,44.9,3.6,1,0,64.2
+MDR00297,MMI Sumatera 0297,MI,Swasta,Sumatera Selatan,Perkotaan,C,131,7,18.71,36.3,10.3,1,0,79.6
+MDR00298,MMI Kalimantan 0298,MI,Negeri,Kalimantan Selatan,Pedesaan,A,292,15,19.47,90.2,5.5,1,0,74.9
+MDR00299,MMI Banten 0299,MI,Swasta,Banten,Pedesaan,B,202,10,20.2,36.7,7.3,1,1,78.2
+MDR00300,MMI NTB 0300,MI,Swasta,NTB,Pedesaan,Belum Terakreditasi,252,18,14.0,36.3,5.3,0,0,65.2
