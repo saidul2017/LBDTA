@@ -30,9 +30,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010120` | RIDWAN HIMAWAN |
-| 2 | `23104010073` | ANANTHA DHARIL ALIFI |
-| 3 | `23104010109` | NURUL IZZAHTUL FAUZIAH KADIR |
+| 1 | `23104010120` | R. H. |
+| 2 | `23104010073` | A. D. A. |
+| 3 | `23104010109` | N. I. F. K. |
 
 ### Kelompok K02
 
@@ -40,9 +40,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010078` | DELLA SYAHTIKA |
-| 2 | `23104010011` | MUHAMMAD IQBAL MA'RUF |
-| 3 | `23104010115` | ARDIYA FAHREZA WIRAATMAJA |
+| 1 | `23104010078` | D. S. |
+| 2 | `23104010011` | M. I. M. |
+| 3 | `23104010115` | A. F. W. |
 
 ### Kelompok K03
 
@@ -50,9 +50,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010095` | MUHAMMAD ULIL ALBAAB |
-| 2 | `23104010010` | AZKIYAH ZAHRA SALEHA |
-| 3 | `23104010008` | NAILA FAUZIYAH |
+| 1 | `23104010095` | M. U. A. |
+| 2 | `23104010010` | A. Z. S. |
+| 3 | `23104010008` | N. F. |
 
 ### Kelompok K04
 
@@ -60,9 +60,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010108` | BAGUS ZAINUR ROHMAN |
-| 2 | `23104010113` | MUCHLISATUN NISA |
-| 3 | `23104010002` | RIDWAN NI'AM AL HAKIM |
+| 1 | `23104010108` | B. Z. R. |
+| 2 | `23104010113` | M. N. |
+| 3 | `23104010002` | R. N. A. H. |
 
 ### Kelompok K05
 
@@ -70,9 +70,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010082` | RIZKY ZUARDI |
-| 2 | `23104010083` | RAFA GHANI ZAKIN VAUGHAN |
-| 3 | `23104010048` | INDRIANI PUTRI NUR SOLIKHAH |
+| 1 | `23104010082` | R. Z. |
+| 2 | `23104010083` | R. G. Z. V. |
+| 3 | `23104010048` | I. P. N. S. |
 
 ### Kelompok K06
 
@@ -80,9 +80,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010080` | UMAILAH HASANAH |
-| 2 | `23104010067` | NASYWAA AULIA GUSTIVIANI |
-| 3 | `23104010103` | IYAS ZAKI MUSTOFA |
+| 1 | `23104010080` | U. H. |
+| 2 | `23104010067` | N. A. G. |
+| 3 | `23104010103` | I. Z. M. |
 
 ### Kelompok K07
 
@@ -90,9 +90,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010116` | HABIBAH KHANSA FATIMAH |
-| 2 | `23104010099` | TAKHSYA BILLAHI ZALFA |
-| 3 | `23104010061` | AFIFAH NUR CAHYANI |
+| 1 | `23104010116` | H. K. F. |
+| 2 | `23104010099` | T. B. Z. |
+| 3 | `23104010061` | A. N. C. |
 
 ### Kelompok K08
 
@@ -100,9 +100,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010035` | FAIZAL DWI DARMAWAN |
-| 2 | `23104010052` | MALFA LIYA REVA LABIBAH |
-| 3 | `23104010118` | ANITA RIZKY MAYASARI |
+| 1 | `23104010035` | F. D. D. |
+| 2 | `23104010052` | M. L. R. L. |
+| 3 | `23104010118` | A. R. M. |
 
 ### Kelompok K09
 
@@ -110,9 +110,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010098` | ASYA AISYAL MARDLIYAH |
-| 2 | `23104010046` | SATRIA AHSANUL HIKAM |
-| 3 | `23104010027` | MOH. ALI MUSA |
+| 1 | `23104010098` | A. A. M. |
+| 2 | `23104010046` | S. A. H. |
+| 3 | `23104010027` | M. A. M. |
 
 ### Kelompok K10
 
@@ -120,9 +120,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010069` | RATNA INDAH SARI |
-| 2 | `23104010038` | AULIA AHMAD FURQON |
-| 3 | `23104010003` | MUHAMMAD ATANA HAQY |
+| 1 | `23104010069` | R. I. S. |
+| 2 | `23104010038` | A. A. F. |
+| 3 | `23104010003` | M. A. H. |
 
 ### Kelompok K11
 
@@ -130,9 +130,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010033` | AUFANIDA RAHMA FINANDA |
-| 2 | `23104010016` | MUZAKKIR RIVAI DAULAY |
-| 3 | `23104010086` | DEVI ISTIYATI |
+| 1 | `23104010033` | A. R. F. |
+| 2 | `23104010016` | M. R. D. |
+| 3 | `23104010086` | D. I. |
 
 ### Kelompok K12
 
@@ -140,9 +140,9 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010051` | IBTIDA LAILATUL HIKMAH |
-| 2 | `23104010081` | MUHAMAD ROZIQ ILHAMI |
-| 3 | `23104010019` | AGUN MUFTAHA NAJID |
+| 1 | `23104010051` | I. L. H. |
+| 2 | `23104010081` | M. R. I. |
+| 3 | `23104010019` | A. M. N. |
 
 ### Kelompok K13
 
@@ -150,8 +150,8 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010036` | ANIS AZZAH NUR FADHILAH |
-| 2 | `23104010111` | MAULIA RACHMA KHASANAH |
+| 1 | `23104010036` | A. A. N. F. |
+| 2 | `23104010111` | M. R. K. |
 
 ### Kelompok K14
 
@@ -159,53 +159,53 @@
 
 | No | NIM | Nama |
 |---|---|---|
-| 1 | `23104010021` | MAYA ARVINA FARADHISA |
-| 2 | `23104010074` | M. MUHTAROMI |
+| 1 | `23104010021` | M. A. F. |
+| 2 | `23104010074` | M. M. |
 
 ## Tabel Pencarian (urut NIM)
 
 | NIM | Nama | Kelompok | Topik |
 |---|---|---|---|
-| `23104010002` | RIDWAN NI'AM AL HAKIM | **K04** | Topik 1 |
-| `23104010003` | MUHAMMAD ATANA HAQY | **K10** | Topik 1 |
-| `23104010008` | NAILA FAUZIYAH | **K03** | Topik 3 |
-| `23104010010` | AZKIYAH ZAHRA SALEHA | **K03** | Topik 3 |
-| `23104010011` | MUHAMMAD IQBAL MA'RUF | **K02** | Topik 2 |
-| `23104010016` | MUZAKKIR RIVAI DAULAY | **K11** | Topik 2 |
-| `23104010019` | AGUN MUFTAHA NAJID | **K12** | Topik 3 |
-| `23104010021` | MAYA ARVINA FARADHISA | **K14** | Topik 2 |
-| `23104010027` | MOH. ALI MUSA | **K09** | Topik 3 |
-| `23104010033` | AUFANIDA RAHMA FINANDA | **K11** | Topik 2 |
-| `23104010035` | FAIZAL DWI DARMAWAN | **K08** | Topik 2 |
-| `23104010036` | ANIS AZZAH NUR FADHILAH | **K13** | Topik 1 |
-| `23104010038` | AULIA AHMAD FURQON | **K10** | Topik 1 |
-| `23104010046` | SATRIA AHSANUL HIKAM | **K09** | Topik 3 |
-| `23104010048` | INDRIANI PUTRI NUR SOLIKHAH | **K05** | Topik 2 |
-| `23104010051` | IBTIDA LAILATUL HIKMAH | **K12** | Topik 3 |
-| `23104010052` | MALFA LIYA REVA LABIBAH | **K08** | Topik 2 |
-| `23104010061` | AFIFAH NUR CAHYANI | **K07** | Topik 1 |
-| `23104010067` | NASYWAA AULIA GUSTIVIANI | **K06** | Topik 3 |
-| `23104010069` | RATNA INDAH SARI | **K10** | Topik 1 |
-| `23104010073` | ANANTHA DHARIL ALIFI | **K01** | Topik 1 |
-| `23104010074` | M. MUHTAROMI | **K14** | Topik 2 |
-| `23104010078` | DELLA SYAHTIKA | **K02** | Topik 2 |
-| `23104010080` | UMAILAH HASANAH | **K06** | Topik 3 |
-| `23104010081` | MUHAMAD ROZIQ ILHAMI | **K12** | Topik 3 |
-| `23104010082` | RIZKY ZUARDI | **K05** | Topik 2 |
-| `23104010083` | RAFA GHANI ZAKIN VAUGHAN | **K05** | Topik 2 |
-| `23104010086` | DEVI ISTIYATI | **K11** | Topik 2 |
-| `23104010095` | MUHAMMAD ULIL ALBAAB | **K03** | Topik 3 |
-| `23104010098` | ASYA AISYAL MARDLIYAH | **K09** | Topik 3 |
-| `23104010099` | TAKHSYA BILLAHI ZALFA | **K07** | Topik 1 |
-| `23104010103` | IYAS ZAKI MUSTOFA | **K06** | Topik 3 |
-| `23104010108` | BAGUS ZAINUR ROHMAN | **K04** | Topik 1 |
-| `23104010109` | NURUL IZZAHTUL FAUZIAH KADIR | **K01** | Topik 1 |
-| `23104010111` | MAULIA RACHMA KHASANAH | **K13** | Topik 1 |
-| `23104010113` | MUCHLISATUN NISA | **K04** | Topik 1 |
-| `23104010115` | ARDIYA FAHREZA WIRAATMAJA | **K02** | Topik 2 |
-| `23104010116` | HABIBAH KHANSA FATIMAH | **K07** | Topik 1 |
-| `23104010118` | ANITA RIZKY MAYASARI | **K08** | Topik 2 |
-| `23104010120` | RIDWAN HIMAWAN | **K01** | Topik 1 |
+| `23104010002` | R. N. A. H. | **K04** | Topik 1 |
+| `23104010003` | M. A. H. | **K10** | Topik 1 |
+| `23104010008` | N. F. | **K03** | Topik 3 |
+| `23104010010` | A. Z. S. | **K03** | Topik 3 |
+| `23104010011` | M. I. M. | **K02** | Topik 2 |
+| `23104010016` | M. R. D. | **K11** | Topik 2 |
+| `23104010019` | A. M. N. | **K12** | Topik 3 |
+| `23104010021` | M. A. F. | **K14** | Topik 2 |
+| `23104010027` | M. A. M. | **K09** | Topik 3 |
+| `23104010033` | A. R. F. | **K11** | Topik 2 |
+| `23104010035` | F. D. D. | **K08** | Topik 2 |
+| `23104010036` | A. A. N. F. | **K13** | Topik 1 |
+| `23104010038` | A. A. F. | **K10** | Topik 1 |
+| `23104010046` | S. A. H. | **K09** | Topik 3 |
+| `23104010048` | I. P. N. S. | **K05** | Topik 2 |
+| `23104010051` | I. L. H. | **K12** | Topik 3 |
+| `23104010052` | M. L. R. L. | **K08** | Topik 2 |
+| `23104010061` | A. N. C. | **K07** | Topik 1 |
+| `23104010067` | N. A. G. | **K06** | Topik 3 |
+| `23104010069` | R. I. S. | **K10** | Topik 1 |
+| `23104010073` | A. D. A. | **K01** | Topik 1 |
+| `23104010074` | M. M. | **K14** | Topik 2 |
+| `23104010078` | D. S. | **K02** | Topik 2 |
+| `23104010080` | U. H. | **K06** | Topik 3 |
+| `23104010081` | M. R. I. | **K12** | Topik 3 |
+| `23104010082` | R. Z. | **K05** | Topik 2 |
+| `23104010083` | R. G. Z. V. | **K05** | Topik 2 |
+| `23104010086` | D. I. | **K11** | Topik 2 |
+| `23104010095` | M. U. A. | **K03** | Topik 3 |
+| `23104010098` | A. A. M. | **K09** | Topik 3 |
+| `23104010099` | T. B. Z. | **K07** | Topik 1 |
+| `23104010103` | I. Z. M. | **K06** | Topik 3 |
+| `23104010108` | B. Z. R. | **K04** | Topik 1 |
+| `23104010109` | N. I. F. K. | **K01** | Topik 1 |
+| `23104010111` | M. R. K. | **K13** | Topik 1 |
+| `23104010113` | M. N. | **K04** | Topik 1 |
+| `23104010115` | A. F. W. | **K02** | Topik 2 |
+| `23104010116` | H. K. F. | **K07** | Topik 1 |
+| `23104010118` | A. R. M. | **K08** | Topik 2 |
+| `23104010120` | R. H. | **K01** | Topik 1 |
 
 ---
 

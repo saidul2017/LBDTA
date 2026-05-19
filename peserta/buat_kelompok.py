@@ -188,10 +188,27 @@ def tulis_roster_json(rows: List[Dict], seed: int, path: Path) -> None:
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--seed", type=int, default=DEFAULT_SEED)
-    p.add_argument("--input", type=Path, default=HERE / "peserta.csv")
+    p.add_argument("--input", type=Path, default=None,
+                   help="Default: pakai peserta-FULL.csv jika ada (lokal "
+                        "saja, nama lengkap), fallback ke peserta.csv "
+                        "(versi inisial untuk publik).")
     args = p.parse_args()
 
-    peserta = baca_peserta(args.input)
+    # Prioritas: peserta-FULL.csv (lokal, nama lengkap) > peserta.csv (publik, inisial)
+    if args.input:
+        input_path = args.input
+    else:
+        full_path = HERE / "peserta-FULL.csv"
+        public_path = HERE / "peserta.csv"
+        if full_path.exists():
+            input_path = full_path
+            print(f"ℹ️  Pakai {full_path.name} (nama lengkap, lokal).")
+        else:
+            input_path = public_path
+            print(f"ℹ️  Pakai {public_path.name} (versi publik). "
+                  f"Hasil pembagian akan menampilkan inisial saja.")
+
+    peserta = baca_peserta(input_path)
     assert len(peserta) == sum(UKURAN_KELOMPOK), (
         f"Jumlah peserta ({len(peserta)}) tidak sama dengan kapasitas "
         f"kelompok ({sum(UKURAN_KELOMPOK)}). Sesuaikan UKURAN_KELOMPOK."

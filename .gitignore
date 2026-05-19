@@ -22,3 +22,12 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+
+# Privasi peserta — JANGAN commit nama lengkap mahasiswa
+peserta/peserta-FULL.csv
+peserta/peserta-*.private.csv
+
+# App secrets & data lokal
+app/.env
+app/data/
