@@ -1,9 +1,13 @@
-# Tugas 03 — *Policy Brief* Mini (Capstone)
+# Tugas 03 — *Policy Brief* Mini (Capstone / UAS)
 
 **Pertemuan:** 3
-**Bobot:** 40% nilai akhir
+**Bobot:** 40% nilai akhir (komponen UAS)
 **Sifat:** Kelompok (2–3 mahasiswa, sama dengan T02)
 **Tenggat:** Akhir Pertemuan 3 (presentasi langsung) + revisi tertulis 1 minggu
+
+> **Tugas ini adalah UAS.** Bacalah seluruh `PETUNJUK-TEKNIS-UAS.md`
+> sebelum mulai. Petunjuk teknis adalah dokumen mengikat yang mengatur
+> tenggat, format, sanksi, dan *form* pengungkapan AI.
 
 ## Tujuan
 
@@ -43,10 +47,24 @@ Susun *policy brief* dengan struktur:
 7. **Daftar pustaka & data** — sitasi lengkap, termasuk disclaimer
    dataset sintetis.
 
+## Sumber daya yang disediakan
+
+| Berkas | Fungsi |
+|---|---|
+| `PETUNJUK-TEKNIS-UAS.md` | **Wajib dibaca** — aturan formal UAS |
+| `template-policy-brief.md` | Struktur 7 bagian — silakan disalin & diisi |
+| `bank-pertanyaan-pemandu.md` | Pertanyaan Socratic ketika kelompok *stuck* |
+| `../notebook/01-praktikum-analisis-madrasah.py` | Notebook referensi P2; boleh dijadikan titik awal |
+| `../dataset/emis-sintetis/` | Dataset + kamus data |
+| `../rubrik/R03-policy-brief-mini.md` | Rubrik penilaian (transparan ke mahasiswa) |
+
 ## Format penyerahan
 
+Sesuai `PETUNJUK-TEKNIS-UAS.md` §4. Ringkasnya:
+
 - *Policy brief* PDF **4–6 halaman**, font 11pt, spasi 1.15.
-- Lampiran: notebook/spreadsheet analisis (boleh kelanjutan dari T02).
+- Notebook analisis (`.ipynb` atau spreadsheet) — *reproducible*.
+- *Form* pengungkapan AI (PDF, ditandatangani semua anggota).
 - Presentasi 8–10 menit + 5 menit tanya-jawab di akhir Pertemuan 3.
 
 ## Rubrik
@@ -60,6 +78,6 @@ Asisten akan **menantang argumen Anda** — terutama pada bagian "diskusi
 *"bagaimana jika confounder-nya ternyata X?"* dan *"siapa yang dirugikan
 oleh rekomendasi ini?"* sebelum presentasi.
 
-Cantumkan ringkasan interaksi penting di lampiran. Penggunaan asisten AI
-yang tidak diungkapkan akan dianggap pelanggaran *ṣidq* dan dikenai
-pengurangan nilai.
+Penggunaan asisten AI **wajib diungkapkan** melalui *form* di
+Petunjuk Teknis UAS §7. Tidak mengisi *form* = pelanggaran *ṣidq* dan
+dikurangi 20 poin.

@@ -1,0 +1,9 @@
+# Pinned versions untuk reproducibility UAS
+# Update versi ini setelah hari-H UAS jika ada migrasi (mis. ke google-genai).
+
+streamlit==1.41.1
+python-dotenv==1.0.1
+groq==0.13.1
+google-generativeai==0.8.4
+openai==1.59.5
+anthropic==0.42.0

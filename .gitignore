@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Working files mahasiswa (boleh di-override per kasus)
+notebook/Kelompok-*
+notebook/draft-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+
+# Privasi peserta — JANGAN commit nama lengkap mahasiswa
+peserta/peserta-FULL.csv
+peserta/peserta-*.private.csv
+
+# App secrets & data lokal
+app/.env
+app/data/
