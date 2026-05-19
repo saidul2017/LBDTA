@@ -1,0 +1,20 @@
+# Secrets — JANGAN pernah commit
+.env
+.env.local
+.env.*.local
+
+# Database lokal (mahasiswa per laptop dosen)
+data/
+*.db
+*.db-journal
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# Streamlit cache
+.streamlit/secrets.toml

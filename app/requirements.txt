@@ -1,0 +1,6 @@
+streamlit>=1.40
+python-dotenv>=1.0
+groq>=0.13
+google-generativeai>=0.8
+openai>=1.50
+anthropic>=0.40
