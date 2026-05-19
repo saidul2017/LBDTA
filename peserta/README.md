@@ -7,31 +7,26 @@ otomatis untuk regenerate jika perlu.
 
 | Berkas | Sumber | Keterangan |
 |---|---|---|
-| `peserta.csv` | input dosen | 40 mahasiswa: `no, nim, nama, gender` |
+| `peserta.csv` | input dosen | 40 mahasiswa: `no, nim, nama` |
 | `buat_kelompok.py` | skrip | generator pembagian kelompok |
 | `peserta_dengan_kelompok.csv` | output skrip | csv lengkap dengan kelompok & topik |
 | `kelompok-uas.md` | output skrip | tabel pembagian (untuk diumumkan) |
 | `roster.json` | output skrip | format yang dikonsumsi aplikasi chatbot |
 
-## ⚠️ Disclaimer kolom `gender`
+## Tentang data gender
 
-Kolom `gender` (`L`/`P`) dalam `peserta.csv` adalah **TEBAKAN HEURISTIK
-asisten AI** berdasarkan pola nama Indonesia/Arab umum. **Bukan data
-otoritatif.**
+Data gender mahasiswa **TIDAK** disimpan di `peserta.csv`. Sebagai
+gantinya:
 
-Ada kemungkinan tebakan keliru, terutama untuk:
-- Nama unisex (mis. "Aulia", "Ardiya")
-- Nama yang tidak umum
-- Nama yang mengandung kombinasi tidak biasa
+1. Mahasiswa **mengisi sendiri** gender mereka saat membuka sesi
+   chatbot UAS — sesuai prinsip otonomi data pribadi.
+2. Data gender tersimpan di **database sesi SQLite**
+   (`app/data/sessions.db`), bukan di roster.
+3. Dosen dapat melihat distribusi gender lewat **Dasbor Dosen**
+   setelah mahasiswa mulai memakai chatbot.
 
-**Tindakan dosen:**
-
-1. Verifikasi langsung ke administrasi prodi atau ke mahasiswa.
-2. Edit `peserta.csv` jika ada yang salah.
-3. Jalankan ulang: `python peserta/buat_kelompok.py`.
-
-Kolom ini disediakan agar dosen punya **opsi** pembagian seimbang
-gender (`--stratify-gender`), bukan untuk diskriminasi atau pelabelan.
+Jika dosen membutuhkan data gender lebih awal (mis. untuk pelaporan
+prodi), silakan koordinasi langsung dengan administrasi atau mahasiswa.
 
 ## Cara regenerate pembagian
 
@@ -41,14 +36,11 @@ python peserta/buat_kelompok.py
 
 # Dengan seed lain
 python peserta/buat_kelompok.py --seed 7
-
-# Stratified by gender (sebar L/P merata antar kelompok)
-python peserta/buat_kelompok.py --stratify-gender
 ```
 
-> **Catatan:** mengubah seed atau opsi stratifikasi akan **mengubah
-> komposisi kelompok**. Kalau Bapak/Ibu sudah mengumumkan pembagian ke
-> mahasiswa, **JANGAN** regenerate kecuali ada alasan kuat.
+> **Catatan:** mengubah seed akan **mengubah komposisi kelompok**.
+> Kalau Bapak/Ibu sudah mengumumkan pembagian ke mahasiswa, **JANGAN**
+> regenerate kecuali ada alasan kuat.
 
 ## Privasi
 
@@ -57,3 +49,5 @@ python peserta/buat_kelompok.py --stratify-gender
 - Jangan publikasikan ke repo publik tanpa izin mahasiswa.
 - Untuk repo publik, ganti nama menjadi inisial atau nomor anonim.
 - File `roster.json` ikut prinsip yang sama.
+- Database `app/data/sessions.db` berisi transkrip + gender —
+  pertimbangkan kebijakan retensi setelah nilai final keluar.

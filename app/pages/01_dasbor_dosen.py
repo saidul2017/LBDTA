@@ -1,24 +1,24 @@
 """Dasbor Dosen — Halaman audit & monitoring UAS.
 
-Halaman ini diakses lewat sidebar Streamlit setelah `streamlit run
-app/streamlit_app.py`. Dilindungi password (`DOSEN_PASSWORD` di .env
-atau Streamlit secrets).
+Diakses dari sidebar Streamlit setelah `streamlit run app/streamlit_app.py`.
+Dilindungi password (`DOSEN_PASSWORD` di .env atau Streamlit secrets).
 
 Fitur:
-- Statistik agregat (total sesi, pesan, kelompok aktif)
-- Tabel sesi dengan filter
+- Statistik agregat (sesi, pesan, mahasiswa aktif, kelompok aktif)
+- Visualisasi: distribusi sesi per topik, per kelompok, gender mahasiswa,
+  volume pesan harian
+- Tabel sesi dengan filter (kelompok, topik, min. pesan)
 - Detail per sesi (transkrip + form pengungkapan AI)
-- Daftar mahasiswa yang BELUM pakai chatbot
-- Ekspor CSV semua sesi
-- Ekspor ZIP semua form pengungkapan AI
+- Daftar mahasiswa belum pakai chatbot
+- Ekspor CSV semua sesi + ZIP semua form pengungkapan AI
 """
 from __future__ import annotations
 
 import io
 import os
-import re
 import sys
 import zipfile
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -33,7 +33,7 @@ from storage import Storage                           # noqa: E402
 from peserta_loader import (                          # noqa: E402
     load_roster, list_all_peserta, list_kelompok,
 )
-from form_generator import generate_form_markdown     # noqa: E402
+from form_generator import generate_form_markdown, GENDER_LABEL  # noqa: E402
 
 load_dotenv()
 
@@ -81,25 +81,14 @@ check_password()
 
 
 # ============================================================
-# Setup
+# Setup data
 # ============================================================
 storage = Storage(DB_PATH)
 roster = load_roster(REPO_ROOT)
 sesi_list = storage.list_sessions()
 
 
-def extract_nim(messages: list[dict]) -> str | None:
-    """Cari NIM yang membuka sesi dari system message."""
-    for m in messages:
-        if m["role"] == "system":
-            match = re.search(r"SESSION_OPENED_BY_NIM=(\d+)", m["content"])
-            if match:
-                return match.group(1)
-    return None
-
-
 def hitung_durasi(messages: list[dict]) -> str:
-    """Durasi dari pesan pertama ke terakhir."""
     if len(messages) < 2:
         return "-"
     try:
@@ -114,23 +103,25 @@ def hitung_durasi(messages: list[dict]) -> str:
         return "-"
 
 
-# Hitung statistik & susun baris untuk tabel
+# Susun baris untuk tabel
 rows = []
 nim_aktif = set()
 for s in sesi_list:
     msgs = storage.get_messages(s["id"])
     msgs_visible = [m for m in msgs if m["role"] != "system"]
-    nim = extract_nim(msgs)
+    nim = s.get("nim") or ""
     if nim:
         nim_aktif.add(nim)
     rows.append({
         "id": s["id"],
         "id_short": s["id"][:8],
         "created_at": s["created_at"],
+        "nim": nim or "-",
+        "nama": s.get("nama") or "-",
+        "gender": s.get("gender") or "",
         "kelompok": s["kelompok"] or "-",
         "topik": (s["topik"] or "-").split(".")[0],
         "topik_full": s["topik"] or "-",
-        "nim_pemicu": nim or "-",
         "jumlah_pesan": len(msgs_visible),
         "durasi": hitung_durasi(msgs),
         "provider": s.get("provider", "-"),
@@ -143,7 +134,10 @@ for s in sesi_list:
 col_title, col_logout = st.columns([4, 1])
 with col_title:
     st.title("🎓 Dasbor Dosen — UAS LBDTA")
-    st.caption(f"DB: `{DB_PATH}` · Update terakhir: {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
+    st.caption(
+        f"DB: `{DB_PATH}` · "
+        f"Update: {datetime.now(timezone.utc).isoformat(timespec='seconds')}"
+    )
 with col_logout:
     if st.button("🚪 Keluar"):
         st.session_state.dosen_authed = False
@@ -151,7 +145,6 @@ with col_logout:
 
 st.divider()
 
-# Metrik utama
 total_sesi = len(rows)
 total_pesan = sum(r["jumlah_pesan"] for r in rows)
 total_mahasiswa = roster["total_mahasiswa"] if roster else 0
@@ -182,19 +175,76 @@ st.divider()
 # ============================================================
 # Tab utama
 # ============================================================
-tab_sesi, tab_belum, tab_detail, tab_export = st.tabs([
+tab_viz, tab_sesi, tab_belum, tab_detail, tab_export = st.tabs([
+    "📊 Statistik",
     "📋 Daftar Sesi",
     "🚫 Belum Pakai",
     "🔎 Detail Sesi",
     "💾 Ekspor",
 ])
 
+# ----- Visualisasi -----
+with tab_viz:
+    if not rows:
+        st.info("Belum ada data untuk divisualisasikan.")
+    else:
+        c1, c2 = st.columns(2)
+
+        with c1:
+            st.markdown("#### Sesi per Topik UAS")
+            topik_count = Counter(r["topik"] for r in rows)
+            chart_topik = {f"Topik {k}": v for k, v in sorted(topik_count.items())}
+            st.bar_chart(chart_topik)
+
+        with c2:
+            st.markdown("#### Sesi per Kelompok")
+            kel_count = Counter(r["kelompok"] for r in rows)
+            chart_kel = dict(sorted(kel_count.items()))
+            st.bar_chart(chart_kel)
+
+        c3, c4 = st.columns(2)
+
+        with c3:
+            st.markdown("#### Distribusi Gender Mahasiswa Aktif")
+            st.caption("_Diisi sendiri oleh mahasiswa saat membuka sesi._")
+            gender_counts = Counter()
+            seen_nim = set()
+            for r in rows:
+                if r["nim"] != "-" and r["nim"] not in seen_nim:
+                    seen_nim.add(r["nim"])
+                    label = GENDER_LABEL.get(r["gender"], "Belum diisi")
+                    gender_counts[label] += 1
+            if gender_counts:
+                st.bar_chart(dict(gender_counts))
+            else:
+                st.info("Belum ada data gender.")
+
+        with c4:
+            st.markdown("#### Volume Pesan per Hari")
+            daily = defaultdict(int)
+            for r in rows:
+                date_str = r["created_at"][:10]
+                daily[date_str] += r["jumlah_pesan"]
+            if daily:
+                chart_daily = dict(sorted(daily.items()))
+                st.bar_chart(chart_daily)
+            else:
+                st.info("Belum ada interaksi.")
+
+        st.markdown("#### Volume Pesan per Kelompok")
+        msg_per_kel = defaultdict(int)
+        for r in rows:
+            msg_per_kel[r["kelompok"]] += r["jumlah_pesan"]
+        if msg_per_kel:
+            chart_msg = dict(sorted(msg_per_kel.items()))
+            st.bar_chart(chart_msg)
+
+
 # ----- Daftar sesi -----
 with tab_sesi:
     if not rows:
         st.info("Belum ada sesi yang tercatat.")
     else:
-        # Filter
         c1, c2, c3 = st.columns(3)
         kelompok_filter = c1.multiselect(
             "Kelompok",
@@ -204,11 +254,7 @@ with tab_sesi:
             "Topik (1/2/3)",
             sorted({r["topik"] for r in rows}),
         )
-        min_pesan = c3.number_input(
-            "Min. pesan",
-            min_value=0,
-            value=0,
-        )
+        min_pesan = c3.number_input("Min. pesan", min_value=0, value=0)
 
         filtered = [
             r for r in rows
@@ -218,21 +264,22 @@ with tab_sesi:
         ]
 
         st.markdown(f"**Menampilkan {len(filtered)} dari {len(rows)} sesi**")
-
-        # Tampilkan sebagai tabel
         display_rows = [
             {
                 "ID": r["id_short"],
                 "Tanggal": r["created_at"][:19].replace("T", " "),
+                "NIM": r["nim"],
+                "Nama": r["nama"],
+                "Gender": GENDER_LABEL.get(r["gender"], "—"),
                 "Kelompok": r["kelompok"],
                 "Topik": r["topik"],
-                "NIM": r["nim_pemicu"],
                 "Pesan": r["jumlah_pesan"],
                 "Durasi": r["durasi"],
             }
             for r in filtered
         ]
         st.dataframe(display_rows, use_container_width=True, hide_index=True)
+
 
 # ----- Belum pakai -----
 with tab_belum:
@@ -244,18 +291,15 @@ with tab_belum:
         all_peserta = list_all_peserta(roster)
         belum = [p for p in all_peserta if p["nim"] not in nim_aktif]
         sudah = [p for p in all_peserta if p["nim"] in nim_aktif]
-
         st.markdown(
             f"**{len(sudah)} sudah pakai · {len(belum)} belum pakai**"
         )
-
         if belum:
             st.markdown("### Mahasiswa yang BELUM membuka sesi chatbot")
             display_belum = [
                 {
                     "NIM": p["nim"],
                     "Nama": p["nama"],
-                    "Gender": p.get("gender", "?"),
                     "Kelompok": p["kelompok"],
                     "Topik": p["topik_uas"].split(".")[0],
                 }
@@ -269,6 +313,7 @@ with tab_belum:
         else:
             st.success("✅ Semua mahasiswa sudah membuka sesi chatbot.")
 
+
 # ----- Detail sesi -----
 with tab_detail:
     if not rows:
@@ -276,7 +321,7 @@ with tab_detail:
     else:
         labels = [
             f"{r['id_short']} — {r['kelompok']} — "
-            f"{r['nim_pemicu']} — {r['jumlah_pesan']} pesan"
+            f"{r['nim']} ({r['nama'][:20]}) — {r['jumlah_pesan']} pesan"
             for r in rows
         ]
         idx = st.selectbox(
@@ -294,12 +339,14 @@ with tab_detail:
             st.markdown("#### Metadata sesi")
             st.json({
                 "id": sess["id"],
+                "nim": sess.get("nim", ""),
+                "nama": sess.get("nama", ""),
+                "gender": GENDER_LABEL.get(sess.get("gender", ""), "—"),
                 "kelompok": sess["kelompok"],
                 "topik": sess["topik"],
                 "provider": sess["provider"],
                 "model": sess["model"],
                 "created_at": sess["created_at"],
-                "nim_pemicu": r["nim_pemicu"],
                 "jumlah_pesan": r["jumlah_pesan"],
                 "durasi": r["durasi"],
             })
@@ -337,19 +384,18 @@ with tab_detail:
                     st.caption(m.get("created_at", ""))
                     st.markdown(m["content"])
 
+
 # ----- Ekspor -----
 with tab_export:
     st.markdown("### Ekspor data UAS")
-    st.caption(
-        "Untuk arsip, audit, atau analisis lanjutan di luar aplikasi."
-    )
+    st.caption("Untuk arsip, audit, atau analisis lanjutan di luar aplikasi.")
 
-    # Ekspor CSV semua sesi
     if rows:
         import csv as csvmod
         buf = io.StringIO()
-        fieldnames = ["id", "created_at", "kelompok", "topik_full",
-                      "nim_pemicu", "jumlah_pesan", "durasi", "provider"]
+        fieldnames = ["id", "created_at", "nim", "nama", "gender",
+                      "kelompok", "topik_full", "jumlah_pesan",
+                      "durasi", "provider"]
         writer = csvmod.DictWriter(buf, fieldnames=fieldnames)
         writer.writeheader()
         for r in rows:
@@ -361,8 +407,6 @@ with tab_export:
             mime="text/csv",
         )
 
-    # Ekspor ZIP semua form
-    if rows:
         zip_buf = io.BytesIO()
         with zipfile.ZipFile(zip_buf, "w", zipfile.ZIP_DEFLATED) as zf:
             for r in rows:
@@ -375,7 +419,7 @@ with tab_export:
                     continue
                 md = generate_form_markdown(sess, msgs)
                 fname = (
-                    f"K{r['kelompok']}_{r['nim_pemicu']}_{r['id_short']}.md"
+                    f"{r['kelompok']}_{r['nim']}_{r['id_short']}.md"
                 )
                 zf.writestr(fname, md)
         zip_buf.seek(0)
@@ -390,11 +434,19 @@ with tab_export:
     st.markdown("### Daftar peserta UAS")
     if roster:
         all_peserta = list_all_peserta(roster)
+        # gender per NIM dari sessions terakhir
+        gender_per_nim = {}
+        for r in sorted(rows, key=lambda x: x["created_at"]):
+            if r["nim"] != "-" and r["gender"]:
+                gender_per_nim[r["nim"]] = r["gender"]
         display_all = [
             {
                 "NIM": p["nim"],
                 "Nama": p["nama"],
-                "Gender": p.get("gender", "?"),
+                "Gender": GENDER_LABEL.get(
+                    gender_per_nim.get(p["nim"], ""),
+                    "Belum diisi",
+                ),
                 "Kelompok": p["kelompok"],
                 "Topik": p["topik_uas"],
                 "Status": (

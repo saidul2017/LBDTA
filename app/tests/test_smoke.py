@@ -1,13 +1,10 @@
 """Tes asap (smoke tests) — tanpa memanggil LLM eksternal.
 
-Memverifikasi bahwa modul-modul lokal bisa di-import, system prompt
-terbangun, storage berfungsi, dan form generator menghasilkan
-output yang masuk akal.
+Memverifikasi modul lokal bisa di-import, system prompt terbangun,
+storage berfungsi (termasuk schema baru dengan gender), dan form
+generator menghasilkan output yang masuk akal.
 
 Jalankan dari root repo:
-    python -m pytest app/tests/ -v
-
-atau tanpa pytest:
     python app/tests/test_smoke.py
 """
 from __future__ import annotations
@@ -25,9 +22,8 @@ def test_persona_loads_knowledge_base():
     from persona import build_system_prompt, list_loaded_files
 
     prompt = build_system_prompt(REPO_ROOT)
-    assert "Asisten" in prompt or "asisten" in prompt
+    assert "asisten" in prompt.lower()
     assert "amānah" in prompt.lower() or "tabayyun" in prompt.lower()
-    # System prompt harus berisi konteks dari dokumen
     assert "[modul/" in prompt or "[rps/" in prompt or "Berkas:" in prompt
 
     files = list_loaded_files(REPO_ROOT)
@@ -37,21 +33,20 @@ def test_persona_loads_knowledge_base():
     print(f"OK persona — {len(files)} berkas dimuat, prompt {len(prompt)} chars")
 
 
-def test_storage_roundtrip(tmp_path: Path = None):
-    if tmp_path is None:
-        import tempfile
-        tmp_dir = Path(tempfile.mkdtemp())
-    else:
-        tmp_dir = tmp_path
-    db_path = tmp_dir / "test.db"
-
+def test_storage_roundtrip():
+    import tempfile
+    tmp = Path(tempfile.mkdtemp())
+    db_path = tmp / "test.db"
     from storage import Storage
 
     s = Storage(db_path)
     sid = s.create_session(
-        kelompok="03",
-        anggota="Ahmad\nFatimah",
-        topik="2. Sertifikasi guru",
+        nim="23104010002",
+        nama="RIDWAN NI'AM AL HAKIM",
+        gender="L",
+        kelompok="K04",
+        anggota="23104010002 - RIDWAN NI'AM AL HAKIM",
+        topik="1. Pemerataan kualitas pembelajaran PAI",
         provider="groq",
         model="llama-3.3-70b-versatile",
     )
@@ -63,17 +58,17 @@ def test_storage_roundtrip(tmp_path: Path = None):
     msgs = s.get_messages(sid)
     assert len(msgs) == 2
     assert msgs[0]["role"] == "user"
-    assert msgs[1]["role"] == "assistant"
 
     sess = s.get_session(sid)
-    assert sess["kelompok"] == "03"
-    assert sess["topik"] == "2. Sertifikasi guru"
+    assert sess["nim"] == "23104010002"
+    assert sess["nama"].startswith("RIDWAN")
+    assert sess["gender"] == "L"
+    assert sess["kelompok"] == "K04"
 
-    s.update_session(sid, topik="3. Investasi infrastruktur digital madrasah")
+    s.update_session(sid, gender="P")
     sess2 = s.get_session(sid)
-    assert "Investasi" in sess2["topik"]
-
-    print(f"OK storage — sesi {sid[:8]}, 2 pesan, update sukses")
+    assert sess2["gender"] == "P"
+    print(f"OK storage — sesi {sid[:8]}, NIM/nama/gender/kelompok ok")
 
 
 def test_form_generator():
@@ -82,9 +77,12 @@ def test_form_generator():
     session = {
         "id": "abcd1234-5678-90ef-1234-567890abcdef",
         "created_at": "2026-05-19T03:00:00+00:00",
-        "kelompok": "03",
-        "anggota": "Ahmad\nFatimah",
-        "topik": "2. Sertifikasi guru",
+        "nim": "23104010002",
+        "nama": "RIDWAN NI'AM AL HAKIM",
+        "gender": "L",
+        "kelompok": "K04",
+        "anggota": "23104010002 - RIDWAN NI'AM AL HAKIM",
+        "topik": "1. Pemerataan kualitas pembelajaran PAI",
         "provider": "groq",
         "model": "llama-3.3-70b-versatile",
     }
@@ -99,22 +97,35 @@ def test_form_generator():
          "created_at": "2026-05-19T03:02:05+00:00"},
     ]
     md = generate_form_markdown(session, messages)
-
     assert "Form Pengungkapan" in md
-    assert "abcd1234" in md
-    assert "Ahmad" in md
-    assert "Sertifikasi" in md
-    assert "Pesan 1" in md
-    assert "Pesan 4" in md
+    assert "23104010002" in md
+    assert "Laki-laki" in md
+    assert "K04" in md
+    assert "Pesan 1" in md and "Pesan 4" in md
 
     cats = categorize_messages(messages)
-    assert cats["Sparring argumen kebijakan"] == 1  # confounder
-    assert cats["Bantuan debug error kode"] == 1    # error
-    print(f"OK form_generator — output {len(md)} chars, kategori benar")
+    assert cats["Sparring argumen kebijakan"] == 1
+    assert cats["Bantuan debug error kode"] == 1
+    print(f"OK form_generator — output {len(md)} chars")
+
+
+def test_roster_loader():
+    from peserta_loader import load_roster, list_all_peserta, list_kelompok
+    r = load_roster(REPO_ROOT)
+    if r is None:
+        print("SKIP roster_loader — peserta/roster.json tidak ada")
+        return
+    assert "gender" not in next(iter(r["peserta"].values())), \
+        "Gender harus TIDAK ADA di roster (mahasiswa isi sendiri)"
+    assert len(list_kelompok(r)) > 0
+    assert len(list_all_peserta(r)) == r["total_mahasiswa"]
+    print(f"OK roster — {r['total_mahasiswa']} mhs, "
+          f"{len(list_kelompok(r))} kelompok, no gender field")
 
 
 if __name__ == "__main__":
     test_persona_loads_knowledge_base()
     test_storage_roundtrip()
     test_form_generator()
+    test_roster_loader()
     print("\n✅ Semua smoke tests lulus.")

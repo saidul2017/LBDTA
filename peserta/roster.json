@@ -1,6 +1,5 @@
 {
   "seed": 1446,
-  "stratified_gender": false,
   "tanggal_generate": "2026-05-19",
   "total_mahasiswa": 40,
   "topik_uas": [
@@ -11,241 +10,201 @@
   "peserta": {
     "23104010120": {
       "nama": "RIDWAN HIMAWAN",
-      "gender": "L",
       "kelompok": "K01",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010073": {
       "nama": "ANANTHA DHARIL ALIFI",
-      "gender": "L",
       "kelompok": "K01",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010109": {
       "nama": "NURUL IZZAHTUL FAUZIAH KADIR",
-      "gender": "P",
       "kelompok": "K01",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010078": {
       "nama": "DELLA SYAHTIKA",
-      "gender": "P",
       "kelompok": "K02",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010011": {
       "nama": "MUHAMMAD IQBAL MA'RUF",
-      "gender": "L",
       "kelompok": "K02",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010115": {
       "nama": "ARDIYA FAHREZA WIRAATMAJA",
-      "gender": "L",
       "kelompok": "K02",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010095": {
       "nama": "MUHAMMAD ULIL ALBAAB",
-      "gender": "L",
       "kelompok": "K03",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010010": {
       "nama": "AZKIYAH ZAHRA SALEHA",
-      "gender": "P",
       "kelompok": "K03",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010008": {
       "nama": "NAILA FAUZIYAH",
-      "gender": "P",
       "kelompok": "K03",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010108": {
       "nama": "BAGUS ZAINUR ROHMAN",
-      "gender": "L",
       "kelompok": "K04",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010113": {
       "nama": "MUCHLISATUN NISA",
-      "gender": "P",
       "kelompok": "K04",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010002": {
       "nama": "RIDWAN NI'AM AL HAKIM",
-      "gender": "L",
       "kelompok": "K04",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010082": {
       "nama": "RIZKY ZUARDI",
-      "gender": "L",
       "kelompok": "K05",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010083": {
       "nama": "RAFA GHANI ZAKIN VAUGHAN",
-      "gender": "L",
       "kelompok": "K05",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010048": {
       "nama": "INDRIANI PUTRI NUR SOLIKHAH",
-      "gender": "P",
       "kelompok": "K05",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010080": {
       "nama": "UMAILAH HASANAH",
-      "gender": "P",
       "kelompok": "K06",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010067": {
       "nama": "NASYWAA AULIA GUSTIVIANI",
-      "gender": "P",
       "kelompok": "K06",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010103": {
       "nama": "IYAS ZAKI MUSTOFA",
-      "gender": "L",
       "kelompok": "K06",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010116": {
       "nama": "HABIBAH KHANSA FATIMAH",
-      "gender": "P",
       "kelompok": "K07",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010099": {
       "nama": "TAKHSYA BILLAHI ZALFA",
-      "gender": "P",
       "kelompok": "K07",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010061": {
       "nama": "AFIFAH NUR CAHYANI",
-      "gender": "P",
       "kelompok": "K07",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010035": {
       "nama": "FAIZAL DWI DARMAWAN",
-      "gender": "L",
       "kelompok": "K08",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010052": {
       "nama": "MALFA LIYA REVA LABIBAH",
-      "gender": "P",
       "kelompok": "K08",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010118": {
       "nama": "ANITA RIZKY MAYASARI",
-      "gender": "P",
       "kelompok": "K08",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010098": {
       "nama": "ASYA AISYAL MARDLIYAH",
-      "gender": "P",
       "kelompok": "K09",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010046": {
       "nama": "SATRIA AHSANUL HIKAM",
-      "gender": "L",
       "kelompok": "K09",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010027": {
       "nama": "MOH. ALI MUSA",
-      "gender": "L",
       "kelompok": "K09",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010069": {
       "nama": "RATNA INDAH SARI",
-      "gender": "P",
       "kelompok": "K10",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010038": {
       "nama": "AULIA AHMAD FURQON",
-      "gender": "L",
       "kelompok": "K10",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010003": {
       "nama": "MUHAMMAD ATANA HAQY",
-      "gender": "L",
       "kelompok": "K10",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010033": {
       "nama": "AUFANIDA RAHMA FINANDA",
-      "gender": "P",
       "kelompok": "K11",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010016": {
       "nama": "MUZAKKIR RIVAI DAULAY",
-      "gender": "L",
       "kelompok": "K11",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010086": {
       "nama": "DEVI ISTIYATI",
-      "gender": "P",
       "kelompok": "K11",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010051": {
       "nama": "IBTIDA LAILATUL HIKMAH",
-      "gender": "P",
       "kelompok": "K12",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010081": {
       "nama": "MUHAMAD ROZIQ ILHAMI",
-      "gender": "L",
       "kelompok": "K12",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010019": {
       "nama": "AGUN MUFTAHA NAJID",
-      "gender": "L",
       "kelompok": "K12",
       "topik_uas": "3. Investasi infrastruktur digital madrasah"
     },
     "23104010036": {
       "nama": "ANIS AZZAH NUR FADHILAH",
-      "gender": "P",
       "kelompok": "K13",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010111": {
       "nama": "MAULIA RACHMA KHASANAH",
-      "gender": "P",
       "kelompok": "K13",
       "topik_uas": "1. Pemerataan kualitas pembelajaran PAI"
     },
     "23104010021": {
       "nama": "MAYA ARVINA FARADHISA",
-      "gender": "P",
       "kelompok": "K14",
       "topik_uas": "2. Sertifikasi guru PAI"
     },
     "23104010074": {
       "nama": "M. MUHTAROMI",
-      "gender": "L",
       "kelompok": "K14",
       "topik_uas": "2. Sertifikasi guru PAI"
     }

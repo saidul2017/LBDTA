@@ -37,6 +37,8 @@ KATEGORI_KEYWORDS = {
     ],
 }
 
+GENDER_LABEL = {"L": "Laki-laki", "P": "Perempuan", "X": "Tidak menyebut", "": "—"}
+
 
 def categorize_messages(messages: List[Dict]) -> Dict[str, int]:
     """Hitung berapa kali tiap kategori muncul di pesan mahasiswa."""
@@ -69,6 +71,7 @@ def generate_form_markdown(
 
     sid = session.get("id", "____")
     short_sid = sid[:8] if sid != "____" else "____"
+    gender_label = GENDER_LABEL.get(session.get("gender", ""), "—")
 
     lines: List[str] = [
         "# Form Pengungkapan Penggunaan Asisten AI",
@@ -88,10 +91,13 @@ def generate_form_markdown(
         f"- **Provider asisten:** {session.get('provider', '____')} "
         f"(model: `{session.get('model', '____')}`)",
         "",
-        "## B. Identitas Kelompok",
+        "## B. Identitas Mahasiswa & Kelompok",
         "",
+        f"- **NIM:** {session.get('nim') or '____'}",
+        f"- **Nama:** {session.get('nama') or '____'}",
+        f"- **Jenis Kelamin:** {gender_label} _(diisi sendiri oleh mahasiswa)_",
         f"- **Nomor kelompok:** {session.get('kelompok') or '____'}",
-        f"- **Anggota:**",
+        f"- **Anggota kelompok:**",
     ]
 
     anggota = (session.get("anggota") or "").strip()

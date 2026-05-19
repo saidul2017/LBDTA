@@ -2,6 +2,9 @@
 
 Setiap kelompok mahasiswa membuat satu sesi (session_id = UUID).
 Semua pesan tersimpan dengan timestamp, dapat diaudit oleh dosen.
+
+Schema migration: kolom `gender` ditambah secara dinamis untuk DB
+existing yang dibuat dengan versi sebelumnya.
 """
 from __future__ import annotations
 
@@ -36,6 +39,9 @@ class Storage:
                 CREATE TABLE IF NOT EXISTS sessions (
                     id           TEXT PRIMARY KEY,
                     created_at   TEXT NOT NULL,
+                    nim          TEXT DEFAULT '',
+                    nama         TEXT DEFAULT '',
+                    gender       TEXT DEFAULT '',
                     kelompok     TEXT DEFAULT '',
                     anggota      TEXT DEFAULT '',
                     topik        TEXT DEFAULT '',
@@ -57,11 +63,21 @@ class Storage:
                     ON messages(session_id);
                 """
             )
+            # Migration: tambah kolom yang mungkin belum ada di DB lama
+            cols = {r[1] for r in c.execute("PRAGMA table_info(sessions)")}
+            for col_name in ("nim", "nama", "gender"):
+                if col_name not in cols:
+                    c.execute(
+                        f"ALTER TABLE sessions ADD COLUMN {col_name} TEXT DEFAULT ''"
+                    )
 
     # ---------- sessions ----------
 
     def create_session(
         self,
+        nim: str = "",
+        nama: str = "",
+        gender: str = "",
         kelompok: str = "",
         anggota: str = "",
         topik: str = "",
@@ -72,21 +88,29 @@ class Storage:
         with self._conn() as c:
             c.execute(
                 "INSERT INTO sessions "
-                "(id, created_at, kelompok, anggota, topik, provider, model) "
-                "VALUES (?, ?, ?, ?, ?, ?, ?)",
-                (sid, _utcnow_iso(), kelompok, anggota, topik, provider, model),
+                "(id, created_at, nim, nama, gender, kelompok, anggota, "
+                "topik, provider, model) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                (sid, _utcnow_iso(), nim, nama, gender, kelompok, anggota,
+                 topik, provider, model),
             )
         return sid
 
     def update_session(
         self,
         session_id: str,
+        nim: Optional[str] = None,
+        nama: Optional[str] = None,
+        gender: Optional[str] = None,
         kelompok: Optional[str] = None,
         anggota: Optional[str] = None,
         topik: Optional[str] = None,
     ) -> None:
         sets, params = [], []
         for col, val in [
+            ("nim", nim),
+            ("nama", nama),
+            ("gender", gender),
             ("kelompok", kelompok),
             ("anggota", anggota),
             ("topik", topik),
@@ -104,26 +128,25 @@ class Storage:
             )
 
     def get_session(self, session_id: str) -> Optional[Dict]:
+        cols = ["id", "created_at", "nim", "nama", "gender", "kelompok",
+                "anggota", "topik", "provider", "model"]
         with self._conn() as c:
             row = c.execute(
-                "SELECT id, created_at, kelompok, anggota, topik, "
-                "provider, model FROM sessions WHERE id = ?",
+                f"SELECT {', '.join(cols)} FROM sessions WHERE id = ?",
                 (session_id,),
             ).fetchone()
         if not row:
             return None
-        cols = ["id", "created_at", "kelompok", "anggota", "topik",
-                "provider", "model"]
         return dict(zip(cols, row))
 
     def list_sessions(self) -> List[Dict]:
+        cols = ["id", "created_at", "nim", "nama", "gender", "kelompok",
+                "anggota", "topik", "provider", "model"]
         with self._conn() as c:
             rows = c.execute(
-                "SELECT id, created_at, kelompok, anggota, topik, "
-                "provider, model FROM sessions ORDER BY created_at DESC"
+                f"SELECT {', '.join(cols)} FROM sessions "
+                "ORDER BY created_at DESC"
             ).fetchall()
-        cols = ["id", "created_at", "kelompok", "anggota", "topik",
-                "provider", "model"]
         return [dict(zip(cols, r)) for r in rows]
 
     # ---------- messages ----------

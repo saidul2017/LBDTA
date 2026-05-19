@@ -3,6 +3,9 @@
 Membaca `peserta/roster.json` (dihasilkan `peserta/buat_kelompok.py`).
 Jika berkas tidak ada (mis. dosen ingin mode bebas), aplikasi akan
 fallback ke input manual.
+
+Catatan: data gender mahasiswa tidak ada di roster — diisi mahasiswa
+sendiri saat login chatbot dan disimpan di tabel sessions.
 """
 from __future__ import annotations
 
@@ -16,7 +19,6 @@ def roster_path(repo_root: Path) -> Path:
 
 
 def load_roster(repo_root: Path) -> Optional[Dict]:
-    """Muat roster dari peserta/roster.json. Return None jika tidak ada."""
     path = roster_path(repo_root)
     if not path.exists():
         return None
@@ -27,14 +29,12 @@ def load_roster(repo_root: Path) -> Optional[Dict]:
 
 
 def list_nim(roster: Optional[Dict]) -> List[str]:
-    """Daftar NIM, urut sesuai roster."""
     if not roster:
         return []
     return sorted(roster.get("peserta", {}).keys())
 
 
 def get_peserta(roster: Optional[Dict], nim: str) -> Optional[Dict]:
-    """Ambil entri peserta berdasarkan NIM."""
     if not roster:
         return None
     return roster.get("peserta", {}).get(nim)
@@ -44,7 +44,6 @@ def get_kelompok_anggota(
     roster: Optional[Dict],
     kelompok: str,
 ) -> List[Dict]:
-    """Ambil semua anggota dari sebuah kode kelompok (mis. 'K05')."""
     if not roster:
         return []
     out: List[Dict] = []
@@ -65,7 +64,6 @@ def list_all_peserta(roster: Optional[Dict]) -> List[Dict]:
 
 
 def list_kelompok(roster: Optional[Dict]) -> List[str]:
-    """Daftar kode kelompok unik."""
     if not roster:
         return []
     return sorted({d["kelompok"] for d in roster.get("peserta", {}).values()})

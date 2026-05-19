@@ -1,4 +1,4 @@
-"""Aplikasi chatbot UAS Literasi Big Data PAI — Streamlit.
+"""Aplikasi chatbot UAS Literasi Big Data PAI — Streamlit (UI mahasiswa).
 
 Jalankan:
     streamlit run app/streamlit_app.py
@@ -32,6 +32,7 @@ load_dotenv()
 REPO_ROOT = HERE.parent
 DEFAULT_DB = HERE / "data" / "sessions.db"
 DB_PATH = Path(os.getenv("DB_PATH", DEFAULT_DB))
+KELAS_PASSWORD = os.getenv("KELAS_PASSWORD", "").strip()
 
 # === Konfigurasi halaman ===
 st.set_page_config(
@@ -41,10 +42,12 @@ st.set_page_config(
 )
 
 # === Inisialisasi state ===
-if "session_id" not in st.session_state:
-    st.session_state.session_id = None
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+for k, v in {
+    "session_id": None,
+    "messages": [],
+    "kelas_authed": not bool(KELAS_PASSWORD),  # auth bypass jika tidak diset
+}.items():
+    st.session_state.setdefault(k, v)
 
 storage = Storage(DB_PATH)
 
@@ -65,7 +68,33 @@ def get_roster() -> dict | None:
 
 
 # ============================================================
-# Sidebar — login / identitas kelompok
+# Auth password kelas (jika dosen mengaktifkan KELAS_PASSWORD)
+# ============================================================
+def gate_kelas_password() -> None:
+    if st.session_state.kelas_authed:
+        return
+    st.title("🔐 Akses Kelas — UAS LBDTA")
+    st.markdown(
+        "Aplikasi ini hanya untuk peserta mata kuliah **Literasi Big "
+        "Data PAI**. Masukkan password kelas yang diberikan dosen."
+    )
+    with st.form("login_kelas"):
+        pwd = st.text_input("Password kelas", type="password")
+        ok = st.form_submit_button("🔓 Masuk", type="primary")
+        if ok:
+            if pwd == KELAS_PASSWORD:
+                st.session_state.kelas_authed = True
+                st.rerun()
+            else:
+                st.error("Password kelas salah. Hubungi dosen pengampu.")
+    st.stop()
+
+
+gate_kelas_password()
+
+
+# ============================================================
+# Sidebar — login / identitas mahasiswa
 # ============================================================
 with st.sidebar:
     st.title("📚 Asisten UAS LBDTA")
@@ -78,7 +107,6 @@ with st.sidebar:
     st.markdown("### Identitas Mahasiswa")
 
     if use_roster:
-        # Mode terkunci: pilih NIM dari roster resmi
         nim_list = list_nim(roster)
         st.caption(
             f"📋 Roster aktif: **{roster['total_mahasiswa']} mahasiswa** "
@@ -91,82 +119,88 @@ with st.sidebar:
             key="nim_select",
         )
         peserta = get_peserta(roster, nim_pilih) if nim_pilih else None
-
-        if peserta:
-            st.success(f"**{peserta['nama']}**")
-            kelompok = peserta["kelompok"]
-            topik = peserta["topik_uas"]
-            st.info(
-                f"Kelompok: **{kelompok}**\n\nTopik UAS: **{topik}**"
-            )
-
-            # Tampilkan anggota satu kelompok
-            anggota_list = get_kelompok_anggota(roster, kelompok)
-            with st.expander(f"👥 Anggota Kelompok {kelompok}"):
-                for a in anggota_list:
-                    st.write(f"- `{a['nim']}` — {a['nama']}")
-
-            # Variabel untuk dipakai create_session
-            kelompok_val = kelompok
-            anggota_val = "\n".join(
-                f"{a['nim']} - {a['nama']}" for a in anggota_list
-            )
-            topik_val = topik
-        else:
-            st.info("Pilih NIM Anda untuk memulai.")
-            kelompok_val = anggota_val = topik_val = ""
     else:
-        # Mode bebas: input manual (jika roster.json tidak ada)
         st.caption("ℹ️ Mode bebas — roster tidak terdeteksi.")
         nim_pilih = st.text_input("NIM Anda", key="nim_input_free")
-        kelompok_val = st.text_input(
-            "Nomor kelompok",
-            placeholder="contoh: K03",
-            key="kelompok_input",
+        peserta = None
+
+    # Input gender — selalu diisi mahasiswa sendiri (tidak dari roster)
+    gender_pilih = st.radio(
+        "Jenis kelamin",
+        options=["", "Laki-laki", "Perempuan", "Tidak ingin menyebut"],
+        format_func=lambda x: x if x else "— pilih —",
+        horizontal=False,
+        key="gender_input",
+    )
+
+    if peserta:
+        st.success(f"**{peserta['nama']}**")
+        kelompok_val = peserta["kelompok"]
+        topik_val = peserta["topik_uas"]
+        nama_val = peserta["nama"]
+        st.info(
+            f"Kelompok: **{kelompok_val}**\n\nTopik UAS: **{topik_val}**"
         )
-        anggota_val = st.text_area(
-            "Anggota (1 nama per baris)",
-            height=90,
-            key="anggota_input",
+        anggota_list = get_kelompok_anggota(roster, kelompok_val)
+        with st.expander(f"👥 Anggota Kelompok {kelompok_val}"):
+            for a in anggota_list:
+                st.write(f"- `{a['nim']}` — {a['nama']}")
+        anggota_val = "\n".join(
+            f"{a['nim']} - {a['nama']}" for a in anggota_list
         )
-        topik_val = st.selectbox(
-            "Topik UAS",
-            [
-                "",
-                "1. Pemerataan kualitas pembelajaran PAI",
-                "2. Sertifikasi guru PAI",
-                "3. Investasi infrastruktur digital madrasah",
-            ],
-            key="topik_input",
-        )
+    else:
+        if not use_roster:
+            kelompok_val = st.text_input(
+                "Nomor kelompok", placeholder="contoh: K03"
+            )
+            anggota_val = st.text_area(
+                "Anggota (1 nama per baris)", height=80
+            )
+            topik_val = st.selectbox(
+                "Topik UAS",
+                ["",
+                 "1. Pemerataan kualitas pembelajaran PAI",
+                 "2. Sertifikasi guru PAI",
+                 "3. Investasi infrastruktur digital madrasah"],
+            )
+            nama_val = ""
+        else:
+            kelompok_val = anggota_val = topik_val = nama_val = ""
 
     st.divider()
 
     # Tombol mulai sesi
     siap_mulai = bool(
-        (use_roster and peserta) or
-        (not use_roster and (kelompok_val or anggota_val))
+        gender_pilih and (
+            (use_roster and peserta) or
+            (not use_roster and (kelompok_val or anggota_val))
+        )
     )
+    if not gender_pilih and (peserta or kelompok_val or anggota_val):
+        st.warning("Mohon pilih jenis kelamin terlebih dahulu.")
+
     if st.button(
         "🆕 Mulai sesi baru",
         type="primary",
         use_container_width=True,
         disabled=not siap_mulai,
     ):
+        # Map gender ke kode singkat untuk konsistensi DB
+        gender_code = {
+            "Laki-laki": "L",
+            "Perempuan": "P",
+            "Tidak ingin menyebut": "X",
+        }.get(gender_pilih, "")
         st.session_state.session_id = storage.create_session(
+            nim=nim_pilih or "",
+            nama=nama_val,
+            gender=gender_code,
             kelompok=kelompok_val,
             anggota=anggota_val,
             topik=topik_val,
             provider=get_provider(),
             model=get_model(),
         )
-        # Simpan NIM pemicu sesi (audit)
-        if nim_pilih:
-            storage.add_message(
-                st.session_state.session_id,
-                "system",
-                f"[SESSION_OPENED_BY_NIM={nim_pilih}]",
-            )
         st.session_state.messages = []
         st.rerun()
 
@@ -205,17 +239,20 @@ with st.sidebar:
 st.title("Asisten UAS — Literasi Big Data PAI")
 
 if not st.session_state.session_id:
-    st.info("👈 **Pilih NIM Anda** dan klik **Mulai sesi baru** dari sidebar.")
+    st.info(
+        "👈 **Pilih NIM, jenis kelamin, lalu klik Mulai sesi baru** dari "
+        "sidebar."
+    )
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("### Cara pakai")
         st.markdown("""
-1. **Pilih NIM Anda** di sidebar — nama, kelompok, dan topik UAS
-   akan terisi otomatis.
-2. Klik **🆕 Mulai sesi baru**.
-3. Mulai bertanya. Asisten akan **mengajak Anda berpikir**, bukan
+1. Pilih **NIM** Anda — nama, kelompok, dan topik UAS auto-terisi.
+2. Pilih **jenis kelamin** Anda.
+3. Klik **🆕 Mulai sesi baru**.
+4. Mulai bertanya. Asisten akan **mengajak Anda berpikir**, bukan
    memberi jawaban final.
-4. Sebelum submit UAS, unduh **Form Pengungkapan AI** dari tab
+5. Sebelum submit UAS, unduh **Form Pengungkapan AI** dari tab
    "📋 Form" dan lampirkan ke berkas UAS Anda.
         """)
     with col2:
@@ -288,7 +325,7 @@ with tab_history:
         )
         for m in msgs:
             if m["role"] == "system":
-                continue  # sembunyikan pesan internal
+                continue
             with st.chat_message(m["role"]):
                 st.caption(m.get("created_at", ""))
                 st.markdown(m["content"])

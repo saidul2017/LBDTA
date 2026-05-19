@@ -11,19 +11,21 @@ sudah dirancang dosen pengampu (lihat `.kiro/steering/asisten-pai.md`).
 ## Fitur
 
 - 💬 **Mahasiswa** — chat dengan persona asisten PAI (7 aturan, Socratic)
-- 🎓 **Dosen** — dasbor terpisah dengan password: statistik, transkrip,
-  daftar mahasiswa belum pakai, ekspor CSV/ZIP
+- 🎓 **Dosen** — dasbor terpisah dengan password: 5 metrik, 5 chart
+  visualisasi, tabel sesi + filter, daftar mahasiswa belum pakai,
+  detail per sesi, ekspor CSV/ZIP
 - 📚 Akses langsung ke **seluruh dokumen kurikulum** (RPS, modul,
   tugas, rubrik, dataset README, notebook referensi) sebagai konteks
 - 👤 **Login NIM** — mahasiswa pilih dari roster 40 nama; nama,
-  kelompok, topik UAS auto-terisi (anti-impersonasi)
+  kelompok, topik UAS auto-terisi (anti-impersonasi). **Gender diisi
+  sendiri oleh mahasiswa** saat login (otonomi data pribadi).
+- 🔐 **Password kelas** opsional — agar URL Streamlit Cloud tidak
+  diakses orang luar (set `KELAS_PASSWORD` di `.env`)
 - 📜 Riwayat per sesi tersimpan di SQLite (audit trail)
 - 📋 **Auto-generate Form Pengungkapan AI** dari riwayat — siap
   dilampirkan ke UAS sesuai `tugas/PETUNJUK-TEKNIS-UAS.md` §7
 - 🔌 Provider LLM **fleksibel**: Groq (default), Gemini, OpenAI,
   Anthropic, Ollama
-- 🔍 Sidebar transparan: dosen/mahasiswa bisa lihat berkas mana saja
-  yang dimuat sebagai basis pengetahuan
 
 ## Quick start (laptop dosen)
 
@@ -115,13 +117,13 @@ Database SQLite di `app/data/sessions.db` menyimpan **semua sesi
 Setelah Bapak/Ibu set `DOSEN_PASSWORD` di `.env`, buka aplikasi
 lalu klik halaman **🎓 Dasbor Dosen** di sidebar Streamlit.
 
-Fitur dasbor:
-- Statistik agregat (sesi, pesan, mahasiswa aktif, kelompok aktif)
-- Tabel sesi dengan filter (kelompok, topik, min. pesan)
-- Detail per sesi (transkrip + Form Pengungkapan AI)
-- Daftar mahasiswa **belum pakai** chatbot (untuk follow-up)
-- Ekspor CSV semua sesi
-- Ekspor ZIP semua Form Pengungkapan AI sekaligus
+5 tab dasbor:
+- **📊 Statistik** — 5 chart: distribusi sesi per topik, per kelompok,
+  gender mahasiswa aktif, volume pesan harian, volume pesan per kelompok
+- **📋 Daftar Sesi** — tabel + filter (kelompok, topik, min. pesan)
+- **🚫 Belum Pakai** — daftar mahasiswa belum buka sesi (untuk follow-up)
+- **🔎 Detail Sesi** — transkrip + ekspor Form Pengungkapan AI per sesi
+- **💾 Ekspor** — CSV semua sesi + ZIP semua Form Pengungkapan AI sekaligus
 
 ### Cara 2 — SQL langsung
 
